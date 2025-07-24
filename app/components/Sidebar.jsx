@@ -3,12 +3,12 @@ import { useState } from 'react';
 // import ThemeToggle from './ThemeToggle';
 
 const menuItems = [
-    { name: 'home', icon: '/icons/icon.png' },
-    { name: 'profile', icon: '/icons/icon1.png' },
-    { name: 'wallet', icon: '/icons/icon2.png' },
-    { name: 'plans', icon: '/icons/icon3.png' },
-    { name: 'referral', icon: '/icons/icon4.png' },
-    { name: 'chat', icon: '/icons/icon5.png' },
+    { name: 'home', icon: '/icons/Icon.png' },
+    { name: 'profile', icon: '/icons/Icon1.png' },
+    { name: 'wallet', icon: '/icons/Icon2.png' },
+    { name: 'plans', icon: '/icons/Icon3.png' },
+    { name: 'referral', icon: '/icons/Icon4.png' },
+    { name: 'chat', icon: '/icons/Icon5.png' },
 ];
 
 export default function Sidebar() {

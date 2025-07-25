@@ -356,38 +356,32 @@ export default function Home() {
       </section>
 
       <section className="bg-black text-white py-8 px-6 relative overflow-hidden">
-        {/* Optional green glow effect */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-[#00ffe1] blur-[120px] opacity-30 rounded-full pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-wide uppercase mb-12">
             FAIR PRICES, NO HIDDEN FEES
           </h2>
 
-          <div className="relative rounded-3xl overflow-hidden shadow-lg h-[500px] w-full">
-            <Image
-              src="/vthumb.png" // replace with your uploaded image in /public
-              alt="Video Preview"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-3xl"
+          {/* Video Container */}
+          <div className="relative overflow-hidden shadow-lg h-[600px] w-full rounded-9xl">
+            <video
+              src="/video/video.mp4"
+              className="w-full h-full object-cover rounded-3xl"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
 
-            {/* Play Button Overlay */}
+            {/* Play Button Overlay (Optional if you want a manual play interface) */}
+            {/* Remove this if you don't want an overlay play icon */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <button className="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center bg-white/10 backdrop-blur-md hover:scale-105 transition-transform">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M6.5 5.5v9l7-4.5-7-4.5z" />
-                </svg>
-              </button>
+
             </div>
           </div>
         </div>
       </section>
+
 
       <section className="bg-black text-white py-24 px-6 relative overflow-hidden">
         {/* Green glow */}

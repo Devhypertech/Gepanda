@@ -20,25 +20,37 @@ export default function Hero() {
         <section className="relative overflow-hidden">
             {/* Desktop Hero Section */}
             <div className="hidden lg:block">
-                <section className="flex flex-col md:flex-row min-h-screen bg-black text-white relative overflow-hidden">
+                <section className="flex flex-wrap flex-col md:flex-row min-h-screen bg-black text-white relative overflow-hidden">
+                    {/* Sidebar for Desktop */}
                     <Sidebar />
+
+                    {/* Mobile Menu Button */}
                     <div className="absolute top-4 left-4 z-50 block lg:hidden">
                         <MobileMenu />
                     </div>
-                    <div className={`hero-fade ${resolvedTheme === 'dark'
-                        ? "flex-1 pt-12 bg-gradient-to-b transition-all duration-500 from-[#02584b] to-black relative overflow-hidden px-2 text-white"
-                        : "flex-1 pt-12 bg-gradient-to-b transition-all duration-500 from-[#02584b] to-white relative overflow-hidden px-2 text-black dark:from-[#02584b] dark:to-black"
-                        }`}>
 
-                        {/* Main Card with Image and Overlay Text */}
-                        <div className="absolute top-20 left-4 right-4 md:top-14 md:left-40 md:right-40">
-                            <Image
-                                src="/logo.png"
-                                alt="GePanda Logo"
-                                width={188}
-                                height={70}
-                                className="mb-4 w-40 md:w-48"
-                            />
+                    {/* Hero Content */}
+                    <div
+                        className={`hero-fade flex-1 pt-16 px-4 sm:px-6 md:px-10 lg:px-20 transition-all duration-500 overflow-hidden relative
+        ${resolvedTheme === 'dark'
+                                ? 'bg-gradient-to-b from-[#02584b] to-black text-white'
+                                : 'bg-gradient-to-b from-[#02584b] to-white text-black dark:from-[#02584b] dark:to-black'
+                            }`}
+                    >
+                        {/* Main Logo & Hero Image */}
+                        <div className="w-full max-w-[1440px] mx-auto relative">
+                            {/* Logo */}
+                            <div className="mb-6 md:mb-10">
+                                <Image
+                                    src="/logo.png"
+                                    alt="GePanda Logo"
+                                    width={188}
+                                    height={70}
+                                    className="w-32 sm:w-40 md:w-48"
+                                />
+                            </div>
+
+                            {/* Hero Image */}
                             <Image
                                 src="/hero.png"
                                 alt="Hero Girl"
@@ -48,30 +60,42 @@ export default function Hero() {
                             />
                         </div>
 
-                        {/* Bottom Card */}
-                        <div className="absolute bottom-4 left-4 right-4 md:-bottom-24 md:left-40 md:w-[40%] rounded-[2rem] px-6 py-8 md:px-8 md:py-40 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                            <Image src="/choose-img.png" alt="Choose Destination" width={180} height={90} className="rounded-xl w-32 md:w-auto" />
+                        {/* Bottom CTA Card */}
+                        <div className="relative overflow-hidden md:bottom-60 md:left-10 w-full max-w-[1440px] mx-auto mt-10 md:mt-16 lg:mt-20 flex flex-col sm:flex-row items-center gap-6 px-2 sm:px-6 md:px-8 lg:px-0">
+                            <Image
+                                src="/choose-img.png"
+                                alt="Choose Destination"
+                                width={180}
+                                height={90}
+                                className="rounded-xl w-28 sm:w-32 md:w-40"
+                            />
                             <div className="text-center sm:text-left">
-                                <h2 className="text-xl md:text-2xl font-extrabold">CHOOSE YOUR DESTINATION</h2>
-                                <p className="text-sm text-white/70 mt-1">Pick a data plan for your trip.</p>
-                                <div className="mt-3 flex flex-wrap justify-center sm:justify-start gap-3">
+                                <h2 className="text-xl sm:text-lg md:text-xl font-extrabold">
+                                    CHOOSE YOUR DESTINATION
+                                </h2>
+                                <p className="text-sm md:text-base text-white/70 mt-1">
+                                    Pick a data plan for your trip.
+                                </p>
+                                <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-3">
                                     <button className="bg-cyan-600 px-4 py-1 rounded-full text-sm">Country</button>
                                     <button className="bg-green-600 px-4 py-1 rounded-full text-sm">Region</button>
-                                    <button className="bg-yellow-400 px-6 py-1 rounded-full text-sm text-black">View All Destinations</button>
+                                    <button className="bg-yellow-400 px-6 py-1 rounded-full text-sm text-black">
+                                        View All Destinations
+                                    </button>
                                 </div>
                             </div>
+                            <button className="relative overflow-hidden md:top-0 md:left-185 bg-emerald-500 text-black w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full text-2xl md:text-3xl shadow-lg">
+                                ↗
+                            </button>
                         </div>
 
-                        {/* Arrow CTA Button */}
-                        <button className="absolute bottom-4 right-4 md:bottom-5 md:right-16 bg-emerald-500 text-black w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full text-2xl md:text-3xl shadow-lg">
-                            ↗
-                        </button>
+                        {/* Arrow Button CTA */}
                     </div>
-
                 </section>
+
             </div>
             {/* Mobile + Tablet Hero */}
-            <section className="bg-gradient-to-b from-[#02584b] to-black text-white py-10 px-4 flex flex-col items-center space-y-6 lg:hidden">
+            <section className="bg-gradient-to-b from-[#02584b] to-black text-white pb-10 px-4 flex flex-col items-center lg:hidden">
                 <div className="absolute top-4 left-4 z-50">
                     <MobileMenu />
                 </div>

@@ -363,10 +363,10 @@ export default function Home() {
           </h2>
 
           {/* Video Container */}
-          <div className="relative overflow-hidden shadow-lg h-[600px] w-full rounded-9xl">
+          <div className="relative overflow-hidden shadow-lg h-full w-full rounded-9xl">
             <video
               src="/video/video.mp4"
-              className="w-full h-full object-cover rounded-3xl"
+              className="w-full h-full object-cover rounded-3xl "
               autoPlay
               loop
               muted

@@ -184,7 +184,7 @@ export default function StackScroll() {
     }, []);
 
     return (
-        <div className="stack-container">
+        <div className="stack-container py-36">
             <div className="card one">
                 <div className="step-box">
                     <div className="step-content">

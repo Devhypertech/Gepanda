@@ -1,3 +1,4 @@
+'use client';
 import Hero from './components/hero/Hero';
 import Sidebar from '../app/components/Sidebar';
 import Image from 'next/image';
@@ -6,6 +7,7 @@ import { Quote } from 'lucide-react';
 import Footer from './components/Footer/Footer';
 import StepSection from './components/StepSection';
 import ScrollCards from './components/ScrollCards';
+import { motion } from 'framer-motion';
 
 
 
@@ -122,6 +124,37 @@ export default function Home() {
     },
   ];
 
+  const cardData = [
+    {
+      id: '01',
+      title: 'CREATIVE AGENCY',
+      date: '2019 PRESENT',
+      description:
+        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+    },
+    {
+      id: '02',
+      title: 'CREATIVE AGENCY',
+      date: '2019 PRESENT',
+      description:
+        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+    },
+    {
+      id: '03',
+      title: 'CREATIVE AGENCY',
+      date: '2019 PRESENT',
+      description:
+        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+    },
+    {
+      id: '04',
+      title: 'CREATIVE AGENCY',
+      date: '2019 PRESENT',
+      description:
+        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+    },
+  ];
+
   const duplicatedItems = [...carouselItems, ...carouselItems];
 
   const testimonials = [
@@ -201,52 +234,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-black text-white py-20 px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-extrabold uppercase">Why GePanda</h2>
-          <div className="flex justify-center">
-            <Image
-              src="/gamechanger.png" // Update path
-              alt="Is a game-changer"
-              width={310}
-              height={72}
-              className="object-contain"
-            />
-          </div>
+      <div className="relative text-center mb-12">
+        <h2 className="text-5xl font-extrabold uppercase">Why GePanda</h2>
+        <div className="flex justify-center">
+          <Image
+            src="/gamechanger.png" // Update path
+            alt="Is a game-changer"
+            width={310}
+            height={72}
+            className="object-contain"
+          />
         </div>
+      </div>
 
-        <div className="bg-white text-black rounded-xl max-w-6xl mx-auto p-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {items.map((item, index) => (
-              <div key={index} className="flex items-start gap-6  pb-6 relative">
-                {/* Left Column */}
-                <div className="flex flex-col items-center text-[#C9C907] font-bold text-5xl">
 
-                  <span>{item.number}</span>
-                  <span className="text-2xl mt-2">↑</span>
-                </div>
+      <section className="relative w-full h-screen text-white overflow-hidden">
 
-                {/* Right Column */}
-                <div className="w-full">
-                  <h4 className=" text-teal-600 uppercase text-sm font-bold">{item.title}</h4>
-                  <div className="h-px bg-gray-300 mt-6 w-full"></div>
-                  <p className="text-sm font-semibold mt-2">{item.date}</p>
-                  <p className="text-sm text-gray-800 mt-2">{item.description}</p>
-                </div>
+
+        {/* 🔁 Background video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/video/cloud.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="absolute inset-0 bg-black/50 z-0" />
+
+        {/* ⬆️ Heading
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-10 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold">Endless Frontier NYU</h1>
+          <p className="mt-2 text-lg md:text-xl text-gray-300">
+            Societal Impact through Science & Technology
+          </p>
+        </div> */}
+
+        {/* 🧱 Animated Cards */}
+        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto pt-64 px-6">
+          {cardData.map((card, index) => (
+            <motion.div
+              key={card.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.4 }}
+              className="bg-black/60 p-6 rounded-xl shadow-lg backdrop-blur-sm"
+            >
+              <div className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4">
+                {card.id}
               </div>
-
-            ))}
-          </div>
+              <h3 className="text-xl font-bold">{card.title}</h3>
+              <p className="text-[#00ffe1] font-semibold mt-1 mb-3">{card.date}</p>
+              <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-
       <ScrollCards />
-
-
-
-
-
 
       <section className="relative py-8 px-4 sm:px-6 bg-black overflow-hidden">
         {/* Glow background */}
@@ -289,8 +334,10 @@ export default function Home() {
             {duplicatedItems.map((item, index) => (
               <div
                 key={index}
-                className="relative min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-white text-white"
+                className={`relative min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-white text-white transition-transform duration-300 ${index % 2 === 0 ? '-translate-y-6' : 'translate-y-6 mb-6'
+                  }`}
               >
+
                 {/* Background image */}
                 <Image
                   src={item.src}
@@ -308,8 +355,12 @@ export default function Home() {
                       {item.badge}
                     </span>
                   )}
-                  {item.tag && <span className="text-emerald-400 text-sm font-semibold">{item.tag}</span>}
-                  {item.title && <h3 className="text-lg font-bold leading-snug mt-1">{item.title}</h3>}
+                  {item.tag && (
+                    <span className="text-emerald-400 text-sm font-semibold">{item.tag}</span>
+                  )}
+                  {item.title && (
+                    <h3 className="text-lg font-bold leading-snug mt-1">{item.title}</h3>
+                  )}
                   <button className="mt-3 text-sm underline underline-offset-4 text-emerald-400 flex items-center gap-1">
                     Explore more <span className="text-xl">→</span>
                   </button>
@@ -319,6 +370,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       <section className="bg-black text-white py-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -352,33 +404,6 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="bg-black text-white py-8 px-6 relative overflow-hidden">
-
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-wide uppercase mb-12">
-            FAIR PRICES, NO HIDDEN FEES
-          </h2>
-
-          {/* Video Container */}
-          <div className="relative overflow-hidden shadow-lg h-full w-full rounded-9xl">
-            <video
-              src="/video/video.mp4"
-              className="w-full h-full object-cover rounded-3xl "
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-
-            {/* Play Button Overlay (Optional if you want a manual play interface) */}
-            {/* Remove this if you don't want an overlay play icon */}
-            <div className="absolute inset-0 flex items-center justify-center">
-
-            </div>
-          </div>
         </div>
       </section>
 

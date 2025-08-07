@@ -6,6 +6,8 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import useGsapScroll from '@/hooks/useGsapScroll';
 import MobileMenu from '../../components/MobileMenu';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 export default function Hero() {
     const [mounted, setMounted] = useState(false);
@@ -51,17 +53,49 @@ export default function Hero() {
                             </div>
 
                             {/* Hero Image */}
-                            <Image
-                                src="/hero.png"
-                                alt="Hero Girl"
-                                width={1690}
-                                height={804}
-                                className="w-full h-auto object-cover rounded-xl"
-                            />
+
+                            <Swiper
+                                modules={[Navigation, Autoplay]}
+                                spaceBetween={0}
+                                slidesPerView={1}
+                                loop={true}
+                                autoplay={{ delay: 2000 }}
+                                pagination={{ clickable: true }}
+                                className="rounded-xl"
+                            >
+                                <SwiperSlide>
+                                    <Image
+                                        src="/slide1.png"
+                                        alt="Slide 1"
+                                        width={1690}
+                                        height={804}
+                                        className="w-full h-auto object-cover"
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        src="/slide2.png"
+                                        alt="Slide 2"
+                                        width={1690}
+                                        height={804}
+                                        className="w-full h-auto object-cover"
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <Image
+                                        src="/slide3.png"
+                                        alt="Slide 3"
+                                        width={1690}
+                                        height={804}
+                                        className="w-full h-auto object-cover"
+                                    />
+                                </SwiperSlide>
+
+                            </Swiper>
                         </div>
 
                         {/* Bottom CTA Card */}
-                        <div className="relative overflow-hidden md:bottom-60 md:left-10 w-full max-w-[1440px] mx-auto mt-10 md:mt-16 lg:mt-20 flex flex-col sm:flex-row items-center gap-6 px-2 sm:px-6 md:px-8 lg:px-0">
+                        <div className="relative overflow-hidden md:bottom-60 md:left-10 w-full max-w-[1440px] mx-auto mt-10 md:mt-6 lg:mt-20 flex flex-col sm:flex-row items-center gap-6 px-2 sm:px-6 md:px-8 lg:px-0">
                             <Image
                                 src="/choose-img.png"
                                 alt="Choose Destination"
@@ -79,9 +113,7 @@ export default function Hero() {
                                 <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-3">
                                     <button className="bg-cyan-600 px-4 py-1 rounded-full text-sm">Country</button>
                                     <button className="bg-green-600 px-4 py-1 rounded-full text-sm">Region</button>
-                                    <button className="bg-yellow-400 px-6 py-1 rounded-full text-sm text-black">
-                                        View All Destinations
-                                    </button>
+
                                 </div>
                             </div>
                             <button className="relative overflow-hidden md:top-0 md:left-185 bg-emerald-500 text-black w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full text-2xl md:text-3xl shadow-lg">

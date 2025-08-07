@@ -195,25 +195,47 @@ export default function Home() {
       <Hero />
 
       {/* Country Cards Section */}
-      <section className="bg-black py-20 px-6 md:px-6">
+      <section className="bg-black py-2 px-2 md:px-6">
+
+        {/* View All Button */}
+        <div className="flex flex-col items-center mb-10">
+          <button className="relative group bg-[#fdfd74] hover:bg-green-300 text-[#007e68] font-semibold text-sm md:text-base px-6 py-2 rounded-full shadow-md transition-all duration-300">
+            View All Destinations
+            {/* Green underline effect */}
+            <span className="absolute left-1/2 -bottom-2 w- h-1 bg-green-300 rounded-full transition-all duration-300 group-hover:w-1/4 group-hover:-translate-x-1/2"></span>
+          </button>
+        </div>
+
+        {/* Country Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
           {countries.map((country, idx) => (
-            <div key={idx} className="bg-[#191919] rounded-md px-5 py-4 flex items-center justify-between text-white">
+            <div
+              key={idx}
+              className="group bg-[#191919] rounded-md px-5 py-4 flex items-center justify-between text-white transform transition-transform duration-300 hover:scale-105 hover:bg-[#222]"
+            >
               <div className="flex items-center gap-3">
-                <Image src={country.flag} alt={`${country.name} Flag`} width={28} height={20} className="rounded-sm" />
+                <Image
+                  src={country.flag}
+                  alt={`${country.name} Flag`}
+                  width={28}
+                  height={20}
+                  className="rounded-sm"
+                />
                 <div>
                   <p className="font-semibold">{country.name}</p>
                   <p className="text-sm text-gray-400">From USD {country.price}</p>
                 </div>
               </div>
-              <span className="text-xl text-gray-400">&gt;</span>
+              <span className="text-xl text-gray-400 group-hover:text-emerald-400 transition-all">
+                &gt;
+              </span>
             </div>
           ))}
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-6 bg-black text-white">
+      <section className="py-40 px-6 bg-black text-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center">
           {stats.map((stat, index) => (
             <div key={index} className="bg-[#191919] p-12 rounded-lg relative">

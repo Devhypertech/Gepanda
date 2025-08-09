@@ -193,17 +193,23 @@ export default function Home() {
   return (
     <main className="bg-black text-white">
       <Hero />
-
       {/* Country Cards Section */}
-      <section className="bg-black py-2 px-2 md:px-6">
+      <section className="bg-black px-2 md:px-6 py-6 md:py-0 relative md:bottom-24 md:h-80">
+        {/* Navigation row */}
+        <div className="relative max-w-5xl mx-auto mb-6 md:mb-10">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 md:flex md:items-center md:justify-center">
+            <button className="w-full whitespace-nowrap rounded-full bg-cyan-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition hover:opacity-90">
+              Country
+            </button>
 
-        {/* View All Button */}
-        <div className="flex flex-col items-center mb-10">
-          <button className="relative group bg-[#fdfd74] hover:bg-green-300 text-[#007e68] font-semibold text-sm md:text-base px-6 py-2 rounded-full shadow-md transition-all duration-300">
-            View All Destinations
-            {/* Green underline effect */}
-            <span className="absolute left-1/2 -bottom-2 w- h-1 bg-green-300 rounded-full transition-all duration-300 group-hover:w-1/4 group-hover:-translate-x-1/2"></span>
-          </button>
+            <button className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-2 px-3 text-[11px] sm:text-sm font-semibold text-[#007e68] shadow-md transition hover:bg-yellow-300">
+              View All Destinations
+            </button>
+
+            <button className="w-full whitespace-nowrap rounded-full bg-green-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition hover:opacity-90">
+              Region
+            </button>
+          </div>
         </div>
 
         {/* Country Cards Grid */}
@@ -211,45 +217,34 @@ export default function Home() {
           {countries.map((country, idx) => (
             <div
               key={idx}
-              className="group bg-[#191919] rounded-md px-5 py-4 flex items-center justify-between text-white transform transition-transform duration-300 hover:scale-105 hover:bg-[#222]"
+              className="group bg-[#191919] rounded-md px-5 py-4 flex items-center justify-between text-white transition-transform duration-300 hover:scale-105 hover:bg-[#222]"
             >
               <div className="flex items-center gap-3">
-                <Image
-                  src={country.flag}
-                  alt={`${country.name} Flag`}
-                  width={28}
-                  height={20}
-                  className="rounded-sm"
-                />
+                <Image src={country.flag} alt={`${country.name} Flag`} width={28} height={20} className="rounded-sm" />
                 <div>
                   <p className="font-semibold">{country.name}</p>
                   <p className="text-sm text-gray-400">From USD {country.price}</p>
                 </div>
               </div>
-              <span className="text-xl text-gray-400 group-hover:text-emerald-400 transition-all">
-                &gt;
-              </span>
+              <span className="text-xl text-gray-400 group-hover:text-emerald-400 transition-colors">&gt;</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-40 px-6 bg-black text-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center">
+      {/* Stats Section (tighter on mobile) */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-black text-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 text-center">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-[#191919] p-12 rounded-lg relative">
-
-              {/* Icon circle */}
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                <div className="bg-[#00ffe1] p-4 rounded-full">
-                  <Users className="text-black w-6 h-6" />
+            <div key={index} className="bg-[#191919] p-8 sm:p-10 md:p-12 rounded-lg relative">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                <div className="bg-[#00ffe1] p-3 sm:p-4 rounded-full">
+                  <Users className="text-black w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
               </div>
-
-              <div className="mt-8">
-                <h3 className="text-4xl font-bold text-white">{stat.value}</h3>
-                <p className="text-sm text-white/70 mt-2">{stat.label}</p>
+              <div className="mt-6 sm:mt-8">
+                <h3 className="text-3xl sm:text-4xl font-bold text-white">{stat.value}</h3>
+                <p className="text-xs sm:text-sm text-white/70 mt-2">{stat.label}</p>
               </div>
             </div>
           ))}
@@ -257,25 +252,23 @@ export default function Home() {
       </section>
 
       <div className="relative text-center mb-12">
-        <h2 className="text-5xl font-extrabold uppercase">Why GePanda</h2>
+        <h2 className="text-4xl font-extrabold uppercase">Why GePanda</h2>
         <div className="flex justify-center">
           <Image
             src="/gamechanger.png" // Update path
             alt="Is a game-changer"
-            width={310}
-            height={72}
+            width={270}
+            height={66}
             className="object-contain"
           />
         </div>
       </div>
 
 
-      <section className="relative w-full h-screen text-white overflow-hidden">
-
-
-        {/* 🔁 Background video */}
+      <section className="relative w-full text-white overflow-visible md:overflow-hidden">
+        {/* Background video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="pointer-events-none absolute inset-0 w-full h-full object-cover z-0"
           src="/video/cloud.mp4"
           autoPlay
           loop
@@ -284,34 +277,31 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-black/50 z-0" />
 
-        {/* ⬆️ Heading
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 z-10 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold">Endless Frontier NYU</h1>
-          <p className="mt-2 text-lg md:text-xl text-gray-300">
-            Societal Impact through Science & Technology
-          </p>
-        </div> */}
-
-        {/* 🧱 Animated Cards */}
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto pt-64 px-6">
-          {cardData.map((card, index) => (
-            <motion.div
-              key={card.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.4 }}
-              className="bg-black/60 p-6 rounded-xl shadow-lg backdrop-blur-sm"
-            >
-              <div className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4">
-                {card.id}
-              </div>
-              <h3 className="text-xl font-bold">{card.title}</h3>
-              <p className="text-[#00ffe1] font-semibold mt-1 mb-3">{card.date}</p>
-              <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
-            </motion.div>
-          ))}
+        {/* Cards */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6
+                  pt-24 sm:pt-26 md:pt-28 lg:pt-24 pb-12 sm:pb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {cardData.map((card, index) => (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="bg-black/60 p-5 sm:p-6 rounded-xl shadow-lg backdrop-blur-sm"
+              >
+                <div className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4">
+                  {card.id}
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold">{card.title}</h3>
+                <p className="text-[#00ffe1] font-semibold mt-1 mb-3 text-sm sm:text-base">{card.date}</p>
+                <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
+
 
       <ScrollCards />
 
@@ -320,9 +310,9 @@ export default function Home() {
         <Image
           src="/Ellipse.png"
           alt="Glow"
-          width={768}
-          height={768}
-          className="absolute top-4 bottom-20 left-1/2 -translate-x-1/2 pointer-events-none select-none z-0"
+          width={1968}
+          height={268}
+          className="absolute top-14 left-1/2 h-130 -translate-x-1/2 pointer-events-none select-none"
         />
 
         {/* Content wrapper */}
@@ -334,7 +324,7 @@ export default function Home() {
               alt="Umbrellas Background"
               width={1431}
               height={534}
-              className="w-full h-[180px] sm:h-auto object-cover"
+              className="w-full opacity-40 sm:h-auto object-cover"
             />
 
             {/* Overlay content */}

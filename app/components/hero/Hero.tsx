@@ -59,7 +59,7 @@ export default function Hero() {
                                 spaceBetween={0}
                                 slidesPerView={1}
                                 loop={true}
-                                autoplay={{ delay: 2000 }}
+                                autoplay={{ delay: 3000 }}
                                 pagination={{ clickable: true }}
                                 className="rounded-xl"
                             >
@@ -110,11 +110,7 @@ export default function Hero() {
                                 <p className="text-sm md:text-base text-white/70 mt-1">
                                     Pick a data plan for your trip.
                                 </p>
-                                <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-3">
-                                    <button className="bg-cyan-600 px-4 py-1 rounded-full text-sm">Country</button>
-                                    <button className="bg-green-600 px-4 py-1 rounded-full text-sm">Region</button>
 
-                                </div>
                             </div>
                             <button className="relative overflow-hidden md:top-0 md:left-185 bg-emerald-500 text-black w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full text-2xl md:text-3xl shadow-lg">
                                 ↗
@@ -155,9 +151,9 @@ export default function Hero() {
                 <div className="text-center space-y-1 px-2">
                     <h2 className="text-xl font-extrabold uppercase">CHOOSE YOUR DESTINATION</h2>
                     <p className="text-sm text-white/80">Pick a data plan for your trip.</p>
-                    <button className="bg-yellow-300 text-black text-base font-semibold px-6 py-2 rounded-full shadow-md w-full max-w-xs">
+                    {/* <button className="bg-yellow-300 text-black text-base font-semibold px-6 py-2 rounded-full shadow-md w-full max-w-xs">
                         View All Destinations
-                    </button>
+                    </button> */}
                 </div>
             </section>
         </section>

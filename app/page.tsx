@@ -265,35 +265,46 @@ export default function Home() {
       </div>
 
 
-      <section className="relative w-full text-white overflow-visible md:overflow-hidden">
-        {/* Background video */}
-        <video
-          className="pointer-events-none absolute inset-0 w-full h-full object-cover z-0"
-          src="/video/cloud.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="absolute inset-0 bg-black/50 z-0" />
+      <section className="relative w-full text-white">
+        {/* Rounded rectangle video container with bottom fade */}
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12">
+          <div
+            className="relative w-full mx-auto overflow-hidden rounded-[2rem]"
+            style={{
+              height: '460px',
+              WebkitMaskImage: 'linear-gradient(to bottom, black 75%, rgba(0,0,0,0) 100%)',
+              maskImage: 'linear-gradient(to bottom, black 75%, rgba(0,0,0,0) 100%)',
+            }}
+          >
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              src="/video/cloud.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            {/* Optional dark overlay for contrast */}
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+        </div>
 
-        {/* Cards */}
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6
-                  pt-24 sm:pt-26 md:pt-28 lg:pt-24 pb-12 sm:pb-16">
+        {/* Cards pulled into the fade area */}
+        <div className="relative z-10 max-w-6xl mx-auto -mt-20 md:-mt-24 lg:-mt-28 px-4 sm:px-6 pb-12 sm:pb-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {cardData.map((card, index) => (
               <motion.div
                 key={card.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="bg-black/60 p-5 sm:p-6 rounded-xl shadow-lg backdrop-blur-sm"
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
+                className="rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-b from-black/70 to-black/80 p-5 sm:p-6"
               >
                 <div className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4">
                   {card.id}
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold">{card.title}</h3>
+                <h3 className="text-lg sm:text-xl font-extrabold">{card.title}</h3>
                 <p className="text-[#00ffe1] font-semibold mt-1 mb-3 text-sm sm:text-base">{card.date}</p>
                 <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
               </motion.div>
@@ -301,7 +312,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       <ScrollCards />
 
@@ -346,7 +356,7 @@ export default function Home() {
             {duplicatedItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-white text-white transition-transform duration-300 ${index % 2 === 0 ? '-translate-y-6' : 'translate-y-6 mb-6'
+                className={`relative min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-white text-white transition-transform duration- b 300 ${index % 2 === 0 ? '-translate-y-8' : 'translate-y-6 mb-6'
                   }`}
               >
 
@@ -357,13 +367,14 @@ export default function Home() {
                   width={400}
                   height={400}
                   className="object-cover w-full h-full"
+
                 />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 flex flex-col justify-end">
-                  {item.id && <span className="text-sm text-white/70 mb-2">{item.id}</span>}
+                  {item.id && <span className="text-sm text-white/70 mb-2 mt-4">{item.id}</span>}
                   {item.badge && (
-                    <span className="bg-white text-black text-xs font-medium px-2 py-1 rounded w-fit mb-2">
+                    <span className="bg-white text-black text-xs font-medium px-2 py-1 rounded w-fit mb-2 mt-4">
                       {item.badge}
                     </span>
                   )}
@@ -382,7 +393,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       <section className="bg-black text-white py-24 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -418,7 +428,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
 
       <section className="bg-black text-white py-24 px-6 relative overflow-hidden">
         {/* Green glow */}

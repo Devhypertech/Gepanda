@@ -1,6 +1,6 @@
 'use client';
 import Hero from './components/hero/Hero';
-import Sidebar from '../app/components/Sidebar';
+import Sidebar from './components/Sidebar';
 import Image from 'next/image';
 import { Users } from 'lucide-react';
 import { Quote } from 'lucide-react';
@@ -9,7 +9,26 @@ import StepSection from './components/StepSection';
 import ScrollCards from './components/ScrollCards';
 import { motion } from 'framer-motion';
 
+// Animation variants for consistent animations
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
 
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
 
 export default function Home() {
 
@@ -67,7 +86,7 @@ export default function Home() {
       step: "Step 1",
       title: "Download the Truely App",
       desc:
-        "Find us on the App Store or Google Play. Tell us where you’re headed and how many days of unlimited you need.",
+        "Find us on the App Store or Google Play. Tell us where you're headed and how many days of unlimited you need.",
       image: "/step1.png",
       bg: "linear-gradient(to bottom, #00ffe1, #fff000)",
     },
@@ -83,7 +102,7 @@ export default function Home() {
       step: "Step 3",
       title: "Enjoy Unlimited Data",
       desc:
-        "You’re online and connected. No roaming fees, no contracts.",
+        "You're online and connected. No roaming fees, no contracts.",
       image: "/step3.png",
       bg: "linear-gradient(to bottom, #ff4d4d, #ffcc00)",
     },
@@ -193,88 +212,189 @@ export default function Home() {
   return (
     <main className="bg-black text-white">
       <Hero />
+      
       {/* Country Cards Section */}
-      <section className="bg-black px-2 md:px-6 py-6 md:py-0 relative md:bottom-24 md:h-80">
+      <motion.section 
+        className="bg-black px-2 md:px-6 py-6 md:py-0 relative md:bottom-24 md:h-80"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         {/* Navigation row */}
-        <div className="relative max-w-5xl mx-auto mb-6 md:mb-10">
+        <motion.div 
+          className="relative max-w-5xl mx-auto mb-6 md:mb-10"
+          variants={scaleIn}
+        >
           <div className="grid grid-cols-3 gap-2 sm:gap-3 md:flex md:items-center md:justify-center">
-            <button className="w-full whitespace-nowrap rounded-full bg-cyan-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition hover:opacity-90">
+            <motion.button 
+              className="w-full whitespace-nowrap rounded-full bg-cyan-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:opacity-90 hover:scale-105"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Country
-            </button>
+            </motion.button>
 
-            <button className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-2 px-3 text-[11px] sm:text-sm font-semibold text-[#007e68] shadow-md transition hover:bg-yellow-300">
+            <motion.button 
+              className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-2 px-3 text-[11px] sm:text-sm font-semibold text-[#007e68] shadow-md transition-all duration-300 hover:bg-yellow-300"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.95 }}
+            >
               View All Destinations
-            </button>
+            </motion.button>
 
-            <button className="w-full whitespace-nowrap rounded-full bg-green-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition hover:opacity-90">
+            <motion.button 
+              className="w-full whitespace-nowrap rounded-full bg-green-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:opacity-90 hover:scale-105"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Region
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Country Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto"
+          variants={staggerContainer}
+        >
           {countries.map((country, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="group bg-[#191919] rounded-md px-5 py-4 flex items-center justify-between text-white transition-transform duration-300 hover:scale-105 hover:bg-[#222]"
+              className="group bg-[#191919] rounded-md px-5 py-4 flex items-center justify-between text-white transition-all duration-300 hover:scale-105 hover:bg-[#222] cursor-pointer"
+              variants={fadeInUp}
+              whileHover={{ 
+                scale: 1.01, 
+                y: -2,
+                boxShadow: "0 20px 40px rgba(0, 255, 225, 0.2)"
+              }}
+              whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-center gap-3">
-                <Image src={country.flag} alt={`${country.name} Flag`} width={28} height={20} className="rounded-sm" />
+                <motion.div
+                  whileHover={{ rotate: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Image src={country.flag} alt={`${country.name} Flag`} width={28} height={20} className="rounded-sm" />
+                </motion.div>
                 <div>
                   <p className="font-semibold">{country.name}</p>
                   <p className="text-sm text-gray-400">From USD {country.price}</p>
                 </div>
               </div>
-              <span className="text-xl text-gray-400 group-hover:text-emerald-400 transition-colors">&gt;</span>
-            </div>
+              <motion.span 
+                className="text-xl text-gray-400 group-hover:text-emerald-400 transition-colors"
+                whileHover={{ x: 3 }}
+              >
+                &gt;
+              </motion.span>
+            </motion.div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      {/* Stats Section (tighter on mobile) */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-black text-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 text-center">
+      {/* Stats Section */}
+      <motion.section 
+        className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-black text-white"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
+        <motion.div 
+          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 text-center"
+          variants={staggerContainer}
+        >
           {stats.map((stat, index) => (
-            <div key={index} className="bg-[#191919] p-8 sm:p-10 md:p-12 rounded-lg relative">
-              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                <div className="bg-[#00ffe1] p-3 sm:p-4 rounded-full">
+            <motion.div 
+              key={index} 
+              className="bg-[#191919] p-8 sm:p-10 md:p-12 rounded-lg relative overflow-hidden group cursor-pointer"
+              variants={scaleIn}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 15px 30px rgba(0, 255, 225, 0.3)"
+              }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Animated background glow */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-[#00ffe1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                initial={{ x: -100 }}
+                whileHover={{ x: 0 }}
+              />
+              
+              <div className="absolute top-4 left-1/2 -translate-x-1/2">
+                <motion.div 
+                  className="bg-[#00ffe1] p-3 sm:p-4 rounded-full"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
                   <Users className="text-black w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
+                </motion.div>
               </div>
-              <div className="mt-6 sm:mt-8">
-                <h3 className="text-3xl sm:text-4xl font-bold text-white">{stat.value}</h3>
+              <div className="mt-6 sm:mt-8 relative z-10">
+                <motion.h3 
+                  className="text-3xl sm:text-4xl font-bold text-white"
+                  initial={{ scale: 0.5 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  {stat.value}
+                </motion.h3>
                 <p className="text-xs sm:text-sm text-white/70 mt-2">{stat.label}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <div className="relative text-center mb-12">
-        <h2 className="text-4xl font-extrabold uppercase">Why GePanda</h2>
-        <div className="flex justify-center">
+      {/* Why GePanda Section */}
+      <motion.div 
+        className="relative text-center mb-12"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={fadeInUp}
+      >
+        <motion.h2 
+          className="text-4xl font-extrabold uppercase"
+          variants={scaleIn}
+        >
+          Why GePanda
+        </motion.h2>
+        <motion.div 
+          className="flex justify-center"
+          variants={scaleIn}
+        >
           <Image
-            src="/gamechanger.png" // Update path
+            src="/gamechanger.png"
             alt="Is a game-changer"
             width={270}
             height={66}
             className="object-contain"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-
-      <section className="relative w-full text-white">
+      {/* Video Section */}
+      <motion.section 
+        className="relative w-full text-white"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         {/* Rounded rectangle video container with bottom fade */}
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12">
-          <div
+          <motion.div
             className="relative w-full mx-auto overflow-hidden rounded-[2rem]"
             style={{
               height: '460px',
               WebkitMaskImage: 'linear-gradient(to bottom, black 75%, rgba(0,0,0,0) 100%)',
               maskImage: 'linear-gradient(to bottom, black 75%, rgba(0,0,0,0) 100%)',
             }}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
           >
             <video
               className="absolute inset-0 h-full w-full object-cover"
@@ -286,48 +406,76 @@ export default function Home() {
             />
             {/* Optional dark overlay for contrast */}
             <div className="absolute inset-0 bg-black/20" />
-          </div>
+          </motion.div>
         </div>
 
         {/* Cards pulled into the fade area */}
         <div className="relative z-10 max-w-6xl mx-auto -mt-20 md:-mt-24 lg:-mt-28 px-4 sm:px-6 pb-12 sm:pb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+            variants={staggerContainer}
+          >
             {cardData.map((card, index) => (
               <motion.div
                 key={card.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.5, delay: index * 0.12 }}
-                className="rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-b from-black/70 to-black/80 p-5 sm:p-6"
+                className="rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-b from-black/70 to-black/80 p-5 sm:p-6 cursor-pointer"
+                variants={fadeInUp}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -10,
+                  boxShadow: "0 25px 50px rgba(0, 255, 225, 0.3)"
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4">
+                <motion.div 
+                  className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
                   {card.id}
-                </div>
+                </motion.div>
                 <h3 className="text-lg sm:text-xl font-extrabold">{card.title}</h3>
                 <p className="text-[#00ffe1] font-semibold mt-1 mb-3 text-sm sm:text-base">{card.date}</p>
                 <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <ScrollCards />
 
-      <section className="relative py-8 px-4 sm:px-6 bg-black overflow-hidden">
+      {/* Glow Background Section */}
+      <motion.section 
+        className="relative py-8 px-4 sm:px-6 bg-black overflow-hidden"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         {/* Glow background */}
-        <Image
-          src="/Ellipse.png"
-          alt="Glow"
-          width={1968}
-          height={268}
-          className="absolute top-14 left-1/2 h-130 -translate-x-1/2 pointer-events-none select-none"
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Image
+            src="/Ellipse.png"
+            alt="Glow"
+            width={1968}
+            height={268}
+            className="absolute top-14 left-1/2 h-130 -translate-x-1/2 pointer-events-none select-none"
+          />
+        </motion.div>
 
         {/* Content wrapper */}
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+          <motion.div 
+            className="relative rounded-2xl overflow-hidden shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             {/* Background image */}
             <Image
               src="/bgtool.png"
@@ -339,27 +487,60 @@ export default function Home() {
 
             {/* Overlay content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/30 backdrop-blur-sm px-4 text-center">
-              <p className="text-xs sm:text-sm uppercase tracking-wide mb-1 text-white/70">Easier</p>
-              <h2 className="text-2xl sm:text-4xl font-semibold mb-3">Connect Instantly</h2>
-              <button className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm sm:text-base font-semibold px-5 sm:px-6 py-2 rounded-full shadow-md">
-                Try AI Tools
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="relative overflow-hidden bg-black py-20 px-6">
-        <div className="w-full overflow-hidden">
-          <div className="flex gap-6 animate-marquee">
-            {duplicatedItems.map((item, index) => (
-              <div
-                key={index}
-                className={`relative min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-white text-white transition-transform duration- b 300 ${index % 2 === 0 ? '-translate-y-8' : 'translate-y-6 mb-6'
-                  }`}
+              <motion.p 
+                className="text-xs sm:text-sm uppercase tracking-wide mb-1 text-white/70"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
               >
+                Easier
+              </motion.p>
+              <motion.h2 
+                className="text-2xl sm:text-4xl font-semibold mb-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                Connect Instantly
+              </motion.h2>
+              <motion.button 
+                className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm sm:text-base font-semibold px-5 sm:px-6 py-2 rounded-full shadow-md"
+                whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(16, 185, 129, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+              >
+                Try AI Tools
+              </motion.button>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
 
+      {/* Carousel Section */}
+      <motion.section 
+        className="relative overflow-hidden bg-black py-20 px-6"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
+        <div className="w-full overflow-hidden">
+          <motion.div 
+            className="flex gap-6 animate-marquee"
+            variants={staggerContainer}
+          >
+            {duplicatedItems.map((item, index) => (
+              <motion.div
+                key={index}
+                className={`relative min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-white text-white transition-all duration-300 cursor-pointer ${index % 2 === 0 ? '-translate-y-8' : 'translate-y-6 mb-6'}`}
+                variants={scaleIn}
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: index % 2 === 0 ? -12 : 0,
+                  boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)"
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
                 {/* Background image */}
                 <Image
                   src={item.src}
@@ -367,7 +548,6 @@ export default function Home() {
                   width={400}
                   height={400}
                   className="object-cover w-full h-full"
-
                 />
 
                 {/* Overlay */}
@@ -384,32 +564,65 @@ export default function Home() {
                   {item.title && (
                     <h3 className="text-lg font-bold leading-snug mt-1">{item.title}</h3>
                   )}
-                  <button className="mt-3 text-sm underline underline-offset-4 text-emerald-400 flex items-center gap-1">
+                  <motion.button 
+                    className="mt-3 text-sm underline underline-offset-4 text-emerald-400 flex items-center gap-1"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     Explore more <span className="text-xl">→</span>
-                  </button>
+                  </motion.button>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-black text-white py-24 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      {/* Testimonials Section */}
+      <motion.section 
+        className="bg-black text-white py-24 px-6"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
+        <motion.div 
+          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          variants={staggerContainer}
+        >
           {testimonials.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="relative bg-[#15160E] rounded-3xl p-6 pb-16 text-center flex flex-col items-center"
+              className="relative bg-[#15160E] rounded-3xl p-6 pb-16 text-center flex flex-col items-center cursor-pointer"
+              variants={scaleIn}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -10,
+                boxShadow: "0 25px 50px rgba(0, 255, 225, 0.2)"
+              }}
+              whileTap={{ scale: 0.98 }}
             >
               {/* Quote Icon */}
-              <div className="absolute -top-6 w-12 h-12 flex items-center justify-center bg-[#00ffe1] text-black rounded-full left-1/2 -translate-x-1/2">
+              <motion.div 
+                className="absolute -top-6 w-12 h-12 flex items-center justify-center bg-[#00ffe1] text-black rounded-full left-1/2 -translate-x-1/2"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
                 <Quote size={20} />
-              </div>
+              </motion.div>
 
               {/* Stars */}
               <div className="flex justify-center gap-1 mt-6 mb-2">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className="text-emerald-400 text-lg">★</span>
+                  <motion.span 
+                    key={i} 
+                    className="text-emerald-400 text-lg"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                  >
+                    ★
+                  </motion.span>
                 ))}
               </div>
 
@@ -421,46 +634,87 @@ export default function Home() {
               <p className="text-sm text-white/80 leading-relaxed">{item.quote}</p>
 
               {/* Avatar Image */}
-              <div className="absolute -bottom-8 w-14 h-14 rounded-full overflow-hidden border-2 border-black bg-white">
+              <motion.div 
+                className="absolute -bottom-8 w-14 h-14 rounded-full overflow-hidden border-2 border-black bg-white"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Image src={item.avatar} alt={item.name} width={56} height={56} />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
-      <section className="bg-black text-white py-24 px-6 relative overflow-hidden">
+      {/* Refer a Friend Section */}
+      <motion.section 
+        className="bg-black text-white py-24 px-6 relative overflow-hidden"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         {/* Green glow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-[#00ffe1] blur-[100px] opacity-20 rounded-full pointer-events-none"></div>
+        <motion.div 
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-[#00ffe1] blur-[100px] opacity-20 rounded-full pointer-events-none"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.4, 0.2]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-10">
           {/* Image Side */}
-          <div className="rounded-3xl overflow-hidden shadow-lg">
+          <motion.div 
+            className="rounded-3xl overflow-hidden shadow-lg"
+            variants={scaleIn}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
             <Image
-              src="/womens.png" // Replace with your actual file in /public
+              src="/womens.png"
               alt="Refer a friend"
               width={550}
               height={400}
               className="w-full h-auto object-cover"
             />
-          </div>
+          </motion.div>
 
           {/* Content Side */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold uppercase mb-4 leading-snug">
+          <motion.div variants={fadeInUp}>
+            <motion.h2 
+              className="text-3xl md:text-4xl font-extrabold uppercase mb-4 leading-snug"
+              variants={scaleIn}
+            >
               Refer a Friend, Get Free Gepanda Credit!
-            </h2>
-            <p className="text-white/80 text-sm mb-6">
+            </motion.h2>
+            <motion.p 
+              className="text-white/80 text-sm mb-6"
+              variants={fadeInUp}
+            >
               Invite your friends to use Gepanda and get a USD 5 credit for every successful referral.
-            </p>
-            <button className="bg-[#00ffe1] text-black font-semibold px-6 py-2 rounded-full hover:bg-[#00e6cb] transition-colors">
+            </motion.p>
+            <motion.button 
+              className="bg-[#00ffe1] text-black font-semibold px-6 py-2 rounded-full hover:bg-[#00e6cb] transition-colors"
+              whileHover={{ 
+                scale: 1.05, 
+                boxShadow: "0 15px 35px rgba(0, 255, 225, 0.4)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
               Learn More
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
+      
       <Footer />
-    </main >
-
+    </main>
   );
 }

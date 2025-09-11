@@ -86,7 +86,7 @@ export default function Footer() {
                             transition={{ delay: sectionIndex * 0.1 }}
                         >
                             <motion.h4 
-                                className="font-semibold mb-3"
+                                className="font-semibold mb-3 font-heading"
                                 whileHover={{ color: "#00ffe1" }}
                                 transition={{ duration: 0.2 }}
                             >

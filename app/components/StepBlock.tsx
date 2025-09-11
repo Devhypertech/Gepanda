@@ -22,7 +22,7 @@ export default function StepBlock({ step, title, desc, image, bg }: StepProps) {
         >
             <div className="max-w-lg text-center md:text-left">
                 <p className="font-semibold text-lg mb-2 text-black">Step {step}</p>
-                <h2 className="text-4xl font-extrabold mb-4 text-black">{title}</h2>
+                <h2 className="text-4xl font-extrabold mb-4 text-black font-heading">{title}</h2>
                 <p className="text-base md:text-lg text-black">{desc}</p>
             </div>
             <div className="mt-10 md:mt-0">

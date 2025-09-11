@@ -45,39 +45,39 @@ export default function Home() {
   ];
 
   const stats = [
-    { value: '199+', label: 'Team member' },
-    { value: '20+', label: 'Winning award' },
-    { value: '100M+', label: 'Complete project' },
+    { value: '400+', label: 'Networks' },
+    { value: '150+', label: 'Countries' },
+    { value: '100k+', label: 'Users' },
   ];
 
   const items = [
     {
       number: '01',
-      title: 'CREATIVE AGENCY',
-      date: '2019 - PRESENT',
+      title: 'Multi-Network',
+    
       description:
-        'Nemo enim ipsam voluptatem designr quia voluptas sit aspernatur aut odit aut fugit sed thisnquia consequuntur magni dolores eos quI Designe ratione',
+        'Each bundle spans multiple networks in each country of coverage.',
     },
     {
       number: '02',
-      title: 'SAMSUNG TECH',
-      date: '2009 - 2018',
+      title: 'Activation',
+ 
       description:
-        'Nemo enim ipsam voluptatem designr quia voluptas sit aspernatur aut odit aut fugit sed thisnquia consequuntur magni dolores eos quI Designe ratione',
+        'The refilled data activates with the bundle’s first usage.',
     },
     {
       number: '03',
-      title: 'METAVERSE',
-      date: '2008 - 2013',
+      title: 'Validity',
+  
       description:
-        'Nemo enim ipsam voluptatem designr quia voluptas sit aspernatur aut odit aut fugit sed thisnquia consequuntur magni dolores eos quI Designe ratione',
+        'Every bundle comes with its own specific validity period.',
     },
     {
       number: '04',
-      title: 'METAVERSE',
-      date: '2008 - 2013',
+      title: 'Coverage',
+    
       description:
-        'Nemo enim ipsam voluptatem designr quia voluptas sit aspernatur aut odit aut fugit sed thisnquia consequuntur magni dolores eos quI Designe ratione',
+        '4G and 5G speeds are achieved in most locations.',
     },
   ];
 
@@ -143,34 +143,30 @@ export default function Home() {
     },
   ];
 
-  const cardData = [
+  const cardData = [ 
     {
-      id: '01',
-      title: 'CREATIVE AGENCY',
-      date: '2019 PRESENT',
+      number: '01',
+      title: 'Multi-Network',
       description:
-        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+        'Each bundle spans multiple networks in each country of coverage.',
     },
     {
-      id: '02',
-      title: 'CREATIVE AGENCY',
-      date: '2019 PRESENT',
+      number: '02',
+      title: 'Activation',
       description:
-        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+        'The refilled data activates with the bundle’s first usage.',
     },
     {
-      id: '03',
-      title: 'CREATIVE AGENCY',
-      date: '2019 PRESENT',
+      number: '03',
+      title: 'Validity',
       description:
-        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+        'Every bundle comes with its own specific validity period.',
     },
     {
-      id: '04',
-      title: 'CREATIVE AGENCY',
-      date: '2019 PRESENT',
+      number: '04',
+      title: 'Coverage',
       description:
-        "Lorem Ipsum is simply dummy text of the printing & typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
+        '4G and 5G speeds are achieved in most locations.',
     },
   ];
 
@@ -334,7 +330,7 @@ export default function Home() {
               </div>
               <div className="mt-6 sm:mt-8 relative z-10">
                 <motion.h3 
-                  className="text-3xl sm:text-4xl font-bold text-white"
+                  className="text-3xl sm:text-4xl font-bold text-white font-heading"
                   initial={{ scale: 0.5 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -357,7 +353,7 @@ export default function Home() {
         variants={fadeInUp}
       >
         <motion.h2 
-          className="text-4xl font-extrabold uppercase"
+          className="text-4xl font-extrabold uppercase font-heading"
           variants={scaleIn}
         >
           Why GePanda
@@ -415,31 +411,31 @@ export default function Home() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
             variants={staggerContainer}
           >
-            {cardData.map((card, index) => (
-              <motion.div
-                key={card.id}
-                className="rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-b from-black/70 to-black/80 p-5 sm:p-6 cursor-pointer"
-                variants={fadeInUp}
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -10,
-                  boxShadow: "0 25px 50px rgba(0, 255, 225, 0.3)"
-                }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.div 
-                  className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  {card.id}
-                </motion.div>
-                <h3 className="text-lg sm:text-xl font-extrabold">{card.title}</h3>
-                <p className="text-[#00ffe1] font-semibold mt-1 mb-3 text-sm sm:text-base">{card.date}</p>
-                <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
-              </motion.div>
-            ))}
+       {cardData.map((card, index) => (
+  <motion.div
+    key={index}
+    className="rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-b from-black/70 to-black/80 p-5 sm:p-6 cursor-pointer"
+    variants={fadeInUp}
+    whileHover={{ 
+      scale: 1.05, 
+      y: -10,
+      boxShadow: "0 25px 50px rgba(0, 255, 225, 0.3)"
+    }}
+    whileTap={{ scale: 0.98 }}
+    transition={{ duration: 0.3 }}
+  >
+    <motion.div 
+      className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4"
+      whileHover={{ rotate: 360 }}
+      transition={{ duration: 0.6 }}
+    >
+      {card.number}
+    </motion.div>
+    <h3 className="text-lg sm:text-xl font-extrabold font-heading">{card.title}</h3>
+    {/* Removed the date line */}
+    <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
+  </motion.div>
+))}
           </motion.div>
         </div>
       </motion.section>
@@ -496,7 +492,7 @@ export default function Home() {
                 Easier
               </motion.p>
               <motion.h2 
-                className="text-2xl sm:text-4xl font-semibold mb-3"
+                className="text-2xl sm:text-4xl font-semibold mb-3 font-heading"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -562,7 +558,7 @@ export default function Home() {
                     <span className="text-emerald-400 text-sm font-semibold">{item.tag}</span>
                   )}
                   {item.title && (
-                    <h3 className="text-lg font-bold leading-snug mt-1">{item.title}</h3>
+                    <h3 className="text-lg font-bold leading-snug mt-1 font-heading">{item.title}</h3>
                   )}
                   <motion.button 
                     className="mt-3 text-sm underline underline-offset-4 text-emerald-400 flex items-center gap-1"
@@ -627,7 +623,7 @@ export default function Home() {
               </div>
 
               {/* Name + Role */}
-              <h3 className="font-bold text-lg">{item.name}</h3>
+              <h3 className="font-bold text-lg font-heading">{item.name}</h3>
               <p className="text-emerald-400 text-sm mb-4">{item.role}</p>
 
               {/* Quote Text */}
@@ -688,7 +684,7 @@ export default function Home() {
           {/* Content Side */}
           <motion.div variants={fadeInUp}>
             <motion.h2 
-              className="text-3xl md:text-4xl font-extrabold uppercase mb-4 leading-snug"
+              className="text-3xl md:text-4xl font-extrabold uppercase mb-4 leading-snug font-heading"
               variants={scaleIn}
             >
               Refer a Friend, Get Free Gepanda Credit!

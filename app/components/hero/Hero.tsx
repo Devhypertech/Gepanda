@@ -178,7 +178,7 @@ export default function Hero() {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                             >
                                 <motion.h2 
-                                    className="text-xl sm:text-lg md:text-xl font-extrabold"
+                                    className="text-xl sm:text-lg md:text-xl font-extrabold font-heading"
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ duration: 0.2 }}
                                 >
@@ -271,7 +271,7 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
                     <motion.h2 
-                        className="text-xl font-extrabold uppercase"
+                        className="text-xl font-extrabold uppercase font-heading"
                         whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.2 }}
                     >

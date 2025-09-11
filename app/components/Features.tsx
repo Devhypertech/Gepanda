@@ -26,7 +26,7 @@ export default function Features() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-3xl md:text-4xl font-bold text-gray-900 mb-12"
+                    className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 font-heading"
                 >
                     Why Choose Us?
                 </motion.h2>
@@ -40,7 +40,7 @@ export default function Features() {
                             className="bg-white p-6 rounded-lg shadow-md"
                         >
                             <CheckCircle className="text-indigo-600 w-6 h-6 mb-4" />
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-2 font-heading">{feature.title}</h3>
                             <p className="text-gray-600 text-sm">{feature.description}</p>
                         </motion.div>
                     ))}

@@ -70,7 +70,7 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 1</span>
-                            <h2>DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
                             <p>
                                 Find us on the App Store or Google Play.<br />
                                 Tell us where you're headed and how many days of unlimited you need.
@@ -92,7 +92,7 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 2</span>
-                            <h2>DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
                             <p>
                                 Find us on the App Store or Google Play.<br />
                                 Tell us where you're headed and how many days of unlimited you need.
@@ -114,7 +114,7 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 3</span>
-                            <h2>DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
                             <p>
                                 Find us on the App Store or Google Play.<br />
                                 Tell us where you're headed and how many days of unlimited you need.
@@ -136,7 +136,7 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 4</span>
-                            <h2>DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
                             <p>
                                 Find us on the App Store or Google Play.<br />
                                 Tell us where you're headed and how many days of unlimited you need.

@@ -47,7 +47,7 @@ export default function Hero() {
             <div className="hidden lg:block">
                 <section className="flex flex-wrap flex-col md:flex-row min-h-screen bg-black text-white relative overflow-hidden">
                     {/* Sidebar for Desktop */}
-                    <Sidebar />
+                    {/* <Sidebar /> */}
 
                     {/* Mobile Menu Button */}
                     <div className="absolute top-4 left-4 z-50 block lg:hidden">

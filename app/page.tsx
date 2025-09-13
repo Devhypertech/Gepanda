@@ -394,7 +394,7 @@ export default function Home() {
           >
             <video
               className="absolute inset-0 h-full w-full object-cover"
-              src="/video/cloud.mp4"
+              src="/video/newvideo.mp4.mp4"
               autoPlay
               loop
               muted

@@ -70,10 +70,10 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 1</span>
-                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">Check Your Device For <br />eSIM Compatibility</h2>
                             <p>
-                                Find us on the App Store or Google Play.<br />
-                                Tell us where you're headed and how many days of unlimited you need.
+                            Verify if your device supports eSIM.<br />
+                            Sign Up Then Choose The Destination and Buy Purchase Your eSIM Data Bundle.
                             </p>
                         </div>
                         <div className="step-image">
@@ -92,10 +92,9 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 2</span>
-                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">Install <br /> and Activate</h2>
                             <p>
-                                Find us on the App Store or Google Play.<br />
-                                Tell us where you're headed and how many days of unlimited you need.
+                            Scan the QR code to install the eSIM. Your line will be activated with the first data<br /> usage.
                             </p>
                         </div>
                         <div className="step-image">
@@ -114,10 +113,9 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 3</span>
-                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">Manage</h2>
                             <p>
-                                Find us on the App Store or Google Play.<br />
-                                Tell us where you're headed and how many days of unlimited you need.
+                            View data lines and monitor your eSIM from your personal account. Access your <br />  personal account to view data lines and manage your eSIM.
                             </p>
                         </div>
                         <div className="step-image">
@@ -136,10 +134,9 @@ export default function StackScroll() {
                     <div className="step-content">
                         <div className="step-text">
                             <span className="step-label">Step 4</span>
-                            <h2 className="font-heading">DOWNLOAD THE<br /> TRUELY APP</h2>
+                            <h2 className="font-heading">Refill</h2>
                             <p>
-                                Find us on the App Store or Google Play.<br />
-                                Tell us where you're headed and how many days of unlimited you need.
+                            Refill you eSIM whenever you need additional connectivity. Top up your eSIM any <br />time you need extra connectivity.
                             </p>
                         </div>
                         <div className="step-image">

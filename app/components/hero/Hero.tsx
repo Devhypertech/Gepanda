@@ -47,7 +47,7 @@ export default function Hero() {
             <div className="hidden lg:block">
                 <section className="flex flex-wrap flex-col md:flex-row min-h-screen bg-black text-white relative overflow-hidden">
                     {/* Sidebar for Desktop */}
-                    {/* <Sidebar /> */}
+                    <Sidebar />
 
                     {/* Mobile Menu Button */}
                     <div className="absolute top-4 left-4 z-50 block lg:hidden">
@@ -253,13 +253,13 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                     >
-                        <motion.div 
+                        {/* <motion.div 
                             className="inline-block bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded"
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
                         >
                             GET 1 FREE DAY WITH A PURCHASE
-                        </motion.div>
+                        </motion.div> */}
                     </motion.div>
                 </motion.div>
 

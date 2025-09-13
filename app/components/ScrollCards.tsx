@@ -141,7 +141,7 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/step1.png"
+                                src="/i1.png"
                                 width={300}
                                 height={60}
                                 alt="App Preview" />

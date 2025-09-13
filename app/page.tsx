@@ -505,7 +505,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
-                Try AI Tools
+                Activate your eSim
               </motion.button>
             </div>
           </motion.div>

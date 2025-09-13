@@ -78,7 +78,7 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/step1.png"
+                                src="/i2.png"
                                 width={300}
                                 height={60}
                                 alt="App Preview" />
@@ -99,7 +99,7 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/step2.png"
+                                src="/i1.png"
                                 width={300}
                                 height={60}
                                 alt="App Preview" />
@@ -120,7 +120,7 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/step3.png"
+                                src="/i3.png"
                                 width={300}
                                 height={60}
                                 alt="App Preview" />

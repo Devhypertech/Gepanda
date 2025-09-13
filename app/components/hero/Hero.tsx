@@ -47,7 +47,7 @@ export default function Hero() {
             <div className="hidden lg:block">
                 <section className="flex flex-wrap flex-col md:flex-row min-h-screen bg-black text-white relative overflow-hidden">
                     {/* Sidebar for Desktop */}
-                    <Sidebar />
+                    {/* <Sidebar /> */}
 
                     {/* Mobile Menu Button */}
                     <div className="absolute top-4 left-4 z-50 block lg:hidden">
@@ -80,7 +80,7 @@ export default function Hero() {
                                     <Image
                                         src="/logo.png"
                                         alt="GePanda Logo"
-                                        width={188}
+                                        width={ 200}
                                         height={70}
                                         className="w-32 sm:w-40 md:w-48"
                                     />
@@ -219,7 +219,7 @@ export default function Hero() {
                 transition={{ duration: 0.8 }}
             >
                 <div className="absolute top-4 left-4 z-50">
-                    <MobileMenu />
+                    {/* <MobileMenu /> */}
                 </div>
 
                 {/* Logo */}
@@ -241,7 +241,7 @@ export default function Hero() {
                     whileHover={{ scale: 1.02 }}
                 >
                     <Image
-                        src="/hero.png"
+                        src="/slide1.png"
                         alt="Hero Image"
                         width={400}
                         height={240}

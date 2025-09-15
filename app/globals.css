@@ -49,17 +49,17 @@ body {
   @apply bg-white text-black transition-colors duration-300 ease-in-out;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 /* Font utility classes */
 .font-heading {
-  font-family: var(--font-niramit), Arial, Helvetica, sans-serif;
+  font-family: 'Arial', 'Helvetica', sans-serif;
   font-weight: 600;
 }
 
 .font-text {
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 /* globals.css */
@@ -237,7 +237,7 @@ html {
 
 .step-text {
   color: #000;
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+  font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 .step-label {

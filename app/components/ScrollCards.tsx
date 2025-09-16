@@ -78,10 +78,10 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/i2.png"
+                                src="/icons/check.png"
                                 width={300}
-                                height={60}
-                                alt="App Preview" />
+                                height={80}
+                                alt="Check Your Device For eSIM Compatibility" />
                         </div>
                     </div>
                 </div>
@@ -99,10 +99,10 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/i1.png"
+                                src="/icons/activate.png"
                                 width={300}
                                 height={60}
-                                alt="App Preview" />
+                                alt="Activate Your eSIM" />
                         </div>
                     </div>
                 </div>
@@ -120,10 +120,10 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/i3.png"
+                                src="/icons/manage.png"
                                 width={300}
                                 height={60}
-                                alt="App Preview" />
+                                alt="Manage Your eSIM" />
                         </div>
                     </div>
                 </div>
@@ -141,10 +141,10 @@ export default function StackScroll() {
                         </div>
                         <div className="step-image">
                             <Image
-                                src="/i1.png"
+                                src="/icons/refil.png"
                                 width={300}
-                                height={60}
-                                alt="App Preview" />
+                                height={80}
+                                alt="Refill Your eSIM" />
                         </div>
                     </div>
                 </div>

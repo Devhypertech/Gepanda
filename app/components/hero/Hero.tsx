@@ -78,11 +78,11 @@ export default function Hero() {
                                     transition={{ duration: 0.2 }}
                                 >
                                     <Image
-                                        src="/logo.png"
+                                        src="/newlogo.png"
                                         alt="GePanda Logo"
-                                        width={ 200}
+                                        width={ 1200}
                                         height={70}
-                                        className="w-32 sm:w-40 md:w-48"
+                                        className="w-36 sm:w-80 md:w-96"
                                     />
                                 </motion.div>
                             </motion.div>
@@ -107,8 +107,8 @@ export default function Hero() {
                                             transition={{ duration: 0.3 }}
                                         >
                                             <Image
-                                                src="/slide1.png"
-                                                alt="Slide 1"
+                                                src="/banner1.png"
+                                                alt="Banner 1"
                                                 width={1690}
                                                 height={804}
                                                 className="w-full h-auto object-cover"
@@ -121,8 +121,8 @@ export default function Hero() {
                                             transition={{ duration: 0.3 }}
                                         >
                                             <Image
-                                                src="/slide2.png"
-                                                alt="Slide 2"
+                                                src="/banner2.png"
+                                                alt="Banner 2"
                                                 width={1690}
                                                 height={804}
                                                 className="w-full h-auto object-cover"
@@ -135,8 +135,8 @@ export default function Hero() {
                                             transition={{ duration: 0.3 }}
                                         >
                                             <Image
-                                                src="/slide3.png"
-                                                alt="Slide 3"
+                                                src="/banner3.png"
+                                                alt="Banner 3"
                                                 width={1690}
                                                 height={804}
                                                 className="w-full h-auto object-cover"
@@ -219,7 +219,7 @@ export default function Hero() {
                 transition={{ duration: 0.8 }}
             >
                 <div className="absolute top-4 left-4 z-50">
-                    {/* <MobileMenu /> */}
+                    <MobileMenu />
                 </div>
 
                 {/* Logo */}

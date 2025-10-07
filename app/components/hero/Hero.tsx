@@ -241,7 +241,7 @@ export default function Hero() {
                     whileHover={{ scale: 1.02 }}
                 >
                     <Image
-                        src="/slide1.png"
+                        src="/banner1.png"
                         alt="Hero Image"
                         width={400}
                         height={240}

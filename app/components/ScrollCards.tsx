@@ -64,7 +64,7 @@ export default function StackScroll() {
     }, []);
 
     return (
-        <div className="w-full py-36 px-4 md:px-12">
+        <div className="w-full py-16 sm:py-24 lg:py-36 px-4 sm:px-6 md:px-12">
             <div className="card one">
                 <div className="step-box">
                     <div className="step-content">

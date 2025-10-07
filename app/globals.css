@@ -195,18 +195,26 @@ html {
 
 .card {
   position: sticky;
-  top: 100px;
+  top: 80px;
   margin: 0 auto;
   width: 100%;
-  height: 400px;
+  height: 300px;
   border-width: 0px;
   background: 000000;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
   will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .card {
+    top: 100px;
+    height: 400px;
+    font-size: 2rem;
+  }
 }
 
 /* .card.one { background-color: #FDFD74; }
@@ -219,20 +227,35 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #22FDD6, #FDFD74);
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 16px;
+  padding: 1.5rem;
   height: 100%;
-  border-width: 6px;
+  border-width: 4px;
   border-color: #007E68;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+@media (min-width: 768px) {
+  .step-box {
+    border-radius: 20px;
+    padding: 2rem;
+    border-width: 6px;
+  }
+}
+
 .step-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .step-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 }
 
 .step-text {
@@ -252,16 +275,28 @@ html {
 }
 
 .step-text h2 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 900;
   margin: 0.5rem 0;
   line-height: 1.2;
 }
 
+@media (min-width: 768px) {
+  .step-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
 .step-text p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .step-text p {
+    font-size: 1rem;
+  }
 }
 
 .download-buttons img {
@@ -284,12 +319,20 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #FFB472, #FF7700);
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 16px;
+  padding: 1.5rem;
   height: 100%;
-  border-width: 6px;
+  border-width: 4px;
   border-color: #FFB472;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .step-box2 {
+    border-radius: 20px;
+    padding: 2rem;
+    border-width: 6px;
+  }
 }
 
 
@@ -298,12 +341,20 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #E57EFB, #DD16FC);
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 16px;
+  padding: 1.5rem;
   height: 100%;
-  border-width: 6px;
+  border-width: 4px;
   border-color: #a900c6;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .step-box3 {
+    border-radius: 20px;
+    padding: 2rem;
+    border-width: 6px;
+  }
 }
 
 
@@ -312,10 +363,18 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #EED791, #A5DCD4);
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 16px;
+  padding: 1.5rem;
   height: 100%;
-  border-width: 6px;
+  border-width: 4px;
   border-color: #007E68;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .step-box4 {
+    border-radius: 20px;
+    padding: 2rem;
+    border-width: 6px;
+  }
 } 

@@ -111,34 +111,18 @@ export default function Home() {
   const carouselItems = [
     {
       src: '/carousel-1.png',
-      alt: 'Instant Connectivity',
-      badge: 'Instant Connectivity',
-      title: 'Automate workflows for efficiency.',
-      tag: 'EfficioAI',
       id: '01/',
     },
     {
       src: '/carousel-2.png',
-      alt: 'Optimize Workflows',
-      badge: 'Ads Blocked',
-      title: 'Effortlessly optimize workflows with AI.',
-      tag: '',
       id: '02/',
     },
     {
       src: '/carousel-3.png',
-      alt: 'Profits with AI',
-      badge: 'Instant Connectivity',
-      title: 'Guide your business to higher profits using AI.',
-      tag: 'OptiFlow',
       id: '03/',
     },
     {
       src: '/carousel-2.png',
-      alt: 'AI Blocked',
-      badge: 'Ads Blocked',
-      title: '',
-      tag: '',
       id: '04/',
     },
   ];
@@ -211,7 +195,7 @@ export default function Home() {
       
       {/* Country Cards Section */}
       <motion.section 
-        className="bg-black px-2 md:px-6 py-6 md:py-0 relative md:bottom-24 md:h-80"
+        className="bg-black px-4 sm:px-6 md:px-8 py-8 md:py-0 relative md:bottom-24 md:h-80"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
@@ -219,12 +203,12 @@ export default function Home() {
       >
         {/* Navigation row */}
         <motion.div 
-          className="relative max-w-5xl mx-auto mb-6 md:mb-10"
+          className="relative max-w-5xl mx-auto mb-8 md:mb-10"
           variants={scaleIn}
         >
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 md:flex md:items-center md:justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:flex md:items-center md:justify-center">
             <motion.button 
-              className="w-full whitespace-nowrap rounded-full bg-cyan-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:opacity-90 hover:scale-105"
+              className="w-full whitespace-nowrap rounded-full bg-cyan-600 py-3 px-4 text-sm sm:text-base font-semibold shadow-md transition-all duration-300 hover:opacity-90 hover:scale-105"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -232,7 +216,7 @@ export default function Home() {
             </motion.button>
 
             <motion.button 
-              className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-2 px-3 text-[11px] sm:text-sm font-semibold text-[#007e68] shadow-md transition-all duration-300 hover:bg-yellow-300"
+              className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-3 px-4 text-sm sm:text-base font-semibold text-[#007e68] shadow-md transition-all duration-300 hover:bg-yellow-300"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -240,7 +224,7 @@ export default function Home() {
             </motion.button>
 
             <motion.button 
-              className="w-full whitespace-nowrap rounded-full bg-green-600 py-2 px-3 text-xs sm:text-sm font-semibold shadow-md transition-all duration-300 hover:opacity-90 hover:scale-105"
+              className="w-full whitespace-nowrap rounded-full bg-green-600 py-3 px-4 text-sm sm:text-base font-semibold shadow-md transition-all duration-300 hover:opacity-90 hover:scale-105"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -251,13 +235,13 @@ export default function Home() {
 
         {/* Country Cards Grid */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto"
           variants={staggerContainer}
         >
           {countries.map((country, idx) => (
             <motion.div
               key={idx}
-              className="group bg-[#191919] rounded-md px-5 py-4 flex items-center justify-between text-white transition-all duration-300 hover:scale-105 hover:bg-[#222] cursor-pointer"
+              className="group bg-[#191919] rounded-lg px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-white transition-all duration-300 hover:scale-105 hover:bg-[#222] cursor-pointer"
               variants={fadeInUp}
               whileHover={{ 
                 scale: 1.01, 
@@ -266,16 +250,16 @@ export default function Home() {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <motion.div
                   whileHover={{ rotate: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Image src={country.flag} alt={`${country.name} Flag`} width={28} height={20} className="rounded-sm" />
+                  <Image src={country.flag} alt={`${country.name} Flag`} width={32} height={24} className="rounded-sm" />
                 </motion.div>
                 <div>
-                  <p className="font-semibold">{country.name}</p>
-                  <p className="text-sm text-gray-400">From USD {country.price}</p>
+                  <p className="font-semibold text-sm sm:text-base">{country.name}</p>
+                  <p className="text-xs sm:text-sm text-gray-400">From USD {country.price}</p>
                 </div>
               </div>
               <motion.span 
@@ -291,20 +275,20 @@ export default function Home() {
 
       {/* Stats Section */}
       <motion.section 
-        className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-black text-white"
+        className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-black text-white"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <motion.div 
-          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 text-center"
+          className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 text-center"
           variants={staggerContainer}
         >
           {stats.map((stat, index) => (
             <motion.div 
               key={index} 
-              className="bg-[#191919] p-8 sm:p-10 md:p-12 rounded-lg relative overflow-hidden group cursor-pointer"
+              className="bg-[#191919] p-6 sm:p-8 lg:p-12 rounded-xl relative overflow-hidden group cursor-pointer"
               variants={scaleIn}
               whileHover={{ 
                 scale: 1.05,
@@ -328,16 +312,16 @@ export default function Home() {
                   <Users className="text-black w-5 h-5 sm:w-6 sm:h-6" />
                 </motion.div>
               </div>
-              <div className="mt-6 sm:mt-8 relative z-10">
+              <div className="mt-8 sm:mt-10 relative z-10">
                 <motion.h3 
-                  className="text-3xl sm:text-4xl font-bold text-white font-heading"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-heading"
                   initial={{ scale: 0.5 }}
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {stat.value}
                 </motion.h3>
-                <p className="text-xs sm:text-sm text-white/70 mt-2">{stat.label}</p>
+                <p className="text-sm sm:text-base text-white/70 mt-2">{stat.label}</p>
               </div>
             </motion.div>
           ))}
@@ -374,18 +358,18 @@ export default function Home() {
 
       {/* Video Section */}
       <motion.section 
-        className="relative w-full text-white"
+        className="relative w-full text-white py-8 sm:py-12"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         {/* Rounded rectangle video container with bottom fade */}
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="relative w-full mx-auto overflow-hidden rounded-[2rem]"
+            className="relative w-full mx-auto overflow-hidden rounded-[1.5rem] sm:rounded-[2rem]"
             style={{
-              height: '460px',
+              height: '300px',
               WebkitMaskImage: 'linear-gradient(to bottom, black 75%, rgba(0,0,0,0) 100%)',
               maskImage: 'linear-gradient(to bottom, black 75%, rgba(0,0,0,0) 100%)',
             }}
@@ -406,7 +390,7 @@ export default function Home() {
         </div>
 
         {/* Cards pulled into the fade area */}
-        <div className="relative z-10 max-w-6xl mx-auto -mt-20 md:-mt-24 lg:-mt-28 px-4 sm:px-6 pb-12 sm:pb-16">
+        <div className="relative z-10 max-w-7xl mx-auto -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-28 px-4 sm:px-6 pb-12 sm:pb-16">
           <motion.div 
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
             variants={staggerContainer}
@@ -414,7 +398,7 @@ export default function Home() {
        {cardData.map((card, index) => (
   <motion.div
     key={index}
-    className="rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-b from-black/70 to-black/80 p-5 sm:p-6 cursor-pointer"
+    className="rounded-xl sm:rounded-2xl shadow-lg backdrop-blur-sm bg-gradient-to-b from-black/70 to-black/80 p-4 sm:p-5 lg:p-6 cursor-pointer"
     variants={fadeInUp}
     whileHover={{ 
       scale: 1.05, 
@@ -425,15 +409,15 @@ export default function Home() {
     transition={{ duration: 0.3 }}
   >
     <motion.div 
-      className="w-10 h-10 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-lg rounded-full mb-4"
+      className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-[#00ffe1] text-black font-bold text-base sm:text-lg rounded-full mb-3 sm:mb-4"
       whileHover={{ rotate: 360 }}
       transition={{ duration: 0.6 }}
     >
       {card.number}
     </motion.div>
-    <h3 className="text-lg sm:text-xl font-extrabold font-heading">{card.title}</h3>
+    <h3 className="text-base sm:text-lg lg:text-xl font-extrabold font-heading">{card.title}</h3>
     {/* Removed the date line */}
-    <p className="text-white/80 text-sm leading-relaxed">{card.description}</p>
+    <p className="text-white/80 text-xs sm:text-sm leading-relaxed">{card.description}</p>
   </motion.div>
 ))}
           </motion.div>
@@ -514,7 +498,7 @@ export default function Home() {
 
       {/* Carousel Section */}
       <motion.section 
-        className="relative overflow-hidden bg-black py-20 px-6"
+        className="relative overflow-hidden bg-black py-12 sm:py-16 lg:py-20 px-4 sm:px-6"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
@@ -522,50 +506,39 @@ export default function Home() {
       >
         <div className="w-full overflow-hidden">
           <motion.div 
-            className="flex gap-6 animate-marquee"
+            className="flex gap-4 sm:gap-6 animate-marquee"
             variants={staggerContainer}
           >
             {duplicatedItems.map((item, index) => (
               <motion.div
                 key={index}
-                className={`relative min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-white text-white transition-all duration-300 cursor-pointer ${index % 2 === 0 ? '-translate-y-8' : 'translate-y-6 mb-6'}`}
+                className={`relative min-w-[240px] sm:min-w-[280px] md:min-w-[320px] rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-300 cursor-pointer ${index % 2 === 0 ? '-translate-y-4 sm:-translate-y-8' : 'translate-y-3 sm:translate-y-6 mb-6'}`}
                 variants={scaleIn}
                 whileHover={{ 
                   scale: 1.05, 
-                  y: index % 2 === 0 ? -12 : 0,
-                  boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)"
+                  y: index % 2 === 0 ? -8 : 0,
+                  boxShadow: "0 25px 50px rgba(0, 255, 225, 0.2)"
                 }}
                 whileTap={{ scale: 0.98 }}
               >
                 {/* Background image */}
                 <Image
                   src={item.src}
-                  alt={item.alt}
+                  alt={item.id || ""}
                   width={400}
                   height={400}
                   className="object-cover w-full h-full"
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 flex flex-col justify-end">
-                  {item.id && <span className="text-sm text-white/70 mb-2 mt-4">{item.id}</span>}
-                  {item.badge && (
-                    <span className="bg-white text-black text-xs font-medium px-2 py-1 rounded w-fit mb-2 mt-4">
-                      {item.badge}
-                    </span>
-                  )}
-                  {item.tag && (
-                    <span className="text-emerald-400 text-sm font-semibold">{item.tag}</span>
-                  )}
-                  {item.title && (
-                    <h3 className="text-lg font-bold leading-snug mt-1 font-heading">{item.title}</h3>
-                  )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-3 sm:p-4 flex flex-col justify-end">
+                  {item.id && <span className="text-xs sm:text-sm text-white/70 mb-2 mt-2 sm:mt-4">{item.id}</span>}
                   <motion.button 
-                    className="mt-3 text-sm underline underline-offset-4 text-emerald-400 flex items-center gap-1"
+                    className="mt-2 sm:mt-3 text-xs sm:text-sm underline underline-offset-4 text-emerald-400 flex items-center gap-1"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Explore more <span className="text-xl">→</span>
+                    Explore more <span className="text-lg sm:text-xl">→</span>
                   </motion.button>
                 </div>
               </motion.div>
@@ -576,20 +549,20 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <motion.section 
-        className="bg-black text-white py-24 px-6"
+        className="bg-black text-white py-16 sm:py-20 lg:py-24 px-4 sm:px-6"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
         variants={fadeInUp}
       >
         <motion.div 
-          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10"
           variants={staggerContainer}
         >
           {testimonials.map((item, index) => (
             <motion.div
               key={index}
-              className="relative bg-[#15160E] rounded-3xl p-6 pb-16 text-center flex flex-col items-center cursor-pointer"
+              className="relative bg-[#15160E] rounded-2xl sm:rounded-3xl p-4 sm:p-6 pb-12 sm:pb-16 text-center flex flex-col items-center cursor-pointer"
               variants={scaleIn}
               whileHover={{ 
                 scale: 1.05, 
@@ -600,19 +573,19 @@ export default function Home() {
             >
               {/* Quote Icon */}
               <motion.div 
-                className="absolute -top-6 w-12 h-12 flex items-center justify-center bg-[#00ffe1] text-black rounded-full left-1/2 -translate-x-1/2"
+                className="absolute -top-4 sm:-top-6 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-[#00ffe1] text-black rounded-full left-1/2 -translate-x-1/2"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
-                <Quote size={20} />
+                <Quote size={16} className="sm:w-5 sm:h-5" />
               </motion.div>
 
               {/* Stars */}
-              <div className="flex justify-center gap-1 mt-6 mb-2">
+              <div className="flex justify-center gap-1 mt-4 sm:mt-6 mb-2">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <motion.span 
                     key={i} 
-                    className="text-emerald-400 text-lg"
+                    className="text-emerald-400 text-base sm:text-lg"
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: i * 0.1 }}
@@ -623,19 +596,19 @@ export default function Home() {
               </div>
 
               {/* Name + Role */}
-              <h3 className="font-bold text-lg font-heading">{item.name}</h3>
-              <p className="text-emerald-400 text-sm mb-4">{item.role}</p>
+              <h3 className="font-bold text-base sm:text-lg font-heading">{item.name}</h3>
+              <p className="text-emerald-400 text-xs sm:text-sm mb-3 sm:mb-4">{item.role}</p>
 
               {/* Quote Text */}
-              <p className="text-sm text-white/80 leading-relaxed">{item.quote}</p>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed">{item.quote}</p>
 
               {/* Avatar Image */}
               <motion.div 
-                className="absolute -bottom-8 w-14 h-14 rounded-full overflow-hidden border-2 border-black bg-white"
+                className="absolute -bottom-6 sm:-bottom-8 w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-black bg-white"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Image src={item.avatar} alt={item.name} width={56} height={56} />
+                <Image src={item.avatar} alt={item.name} width={56} height={56} className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           ))}
@@ -644,7 +617,7 @@ export default function Home() {
 
       {/* Refer a Friend Section */}
       <motion.section 
-        className="bg-black text-white py-24 px-6 relative overflow-hidden"
+        className="bg-black text-white py-16 sm:py-20 lg:py-24 px-4 sm:px-6 relative overflow-hidden"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, amount: 0.3 }}
@@ -664,10 +637,10 @@ export default function Home() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 sm:gap-10 relative z-10">
           {/* Image Side */}
           <motion.div 
-            className="rounded-3xl overflow-hidden shadow-lg"
+            className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg order-2 lg:order-1"
             variants={scaleIn}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -682,21 +655,21 @@ export default function Home() {
           </motion.div>
 
           {/* Content Side */}
-          <motion.div variants={fadeInUp}>
+          <motion.div variants={fadeInUp} className="order-1 lg:order-2 text-center lg:text-left">
             <motion.h2 
-              className="text-3xl md:text-4xl font-extrabold uppercase mb-4 leading-snug font-heading"
+              className="text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase mb-4 sm:mb-6 leading-snug font-heading"
               variants={scaleIn}
             >
               Refer a Friend, Get Free Gepanda Credit!
             </motion.h2>
-            <motion.p 
+            {/* <motion.p 
               className="text-white/80 text-sm mb-6"
               variants={fadeInUp}
             >
               Invite your friends to use Gepanda and get a USD 5 credit for every successful referral.
-            </motion.p>
+            </motion.p> */}
             <motion.button 
-              className="bg-[#00ffe1] text-black font-semibold px-6 py-2 rounded-full hover:bg-[#00e6cb] transition-colors"
+              className="bg-[#00ffe1] text-black font-semibold px-6 py-3 sm:py-4 rounded-full hover:bg-[#00e6cb] transition-colors text-sm sm:text-base"
               whileHover={{ 
                 scale: 1.05, 
                 boxShadow: "0 15px 35px rgba(0, 255, 225, 0.4)"

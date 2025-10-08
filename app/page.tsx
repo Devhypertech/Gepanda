@@ -156,35 +156,39 @@ export default function Home() {
 
   const duplicatedItems = [...carouselItems, ...carouselItems];
 
-  const testimonials = [
+  const testimonials: Array<{
+    name: string;
+    role: string;
+    quote: string;
+    avatar: string;
+  }> = [
     {
-      name: 'Brooklyn Simmons',
-      role: 'Marketing Coordinator',
+      name: 'Ava Madison',
+      role: 'Content Creator',
       quote:
-        'Financial planners help people to knowledge in about how to invest and save their money the most efficient way ever. planners help people to knowledge in about how.',
-      avatar: '/reviewer.png', // replace with your real avatar image
+        'GePanda made my trip so smooth! No SIM swaps, no roaming panic, just instant data wherever I landed. Totally clutch for digital nomads like me."',
+      avatar: '/Ava.webp',
     },
-    // Duplicate as needed
     {
-      name: 'Brooklyn Simmons',
-      role: 'Marketing Coordinator',
+      name: 'Daniel Mitchells',
+      role: 'Sales Executive',
       quote:
-        'Financial planners help people to knowledge in about how to invest and save their money the most efficient way ever. planners help people to knowledge in about how.',
+        'Highly recommended for someone who travels frequently for work, GePanda keeps me connected across countries without any network issues. It\'s reliable and fast',
       avatar: '/reviewer.png',
     },
     {
-      name: 'Brooklyn Simmons',
-      role: 'Marketing Coordinator',
+      name: 'Danny Simmons',
+      role: 'Communications Manager',
       quote:
-        'Financial planners help people to knowledge in about how to invest and save their money the most efficient way ever. planners help people to knowledge in about how.',
-      avatar: '/reviewer.png',
+        'Amazed by the service of GePanda. Much better than Local service providers. They have affordable data plans and offer international communication easily.',
+      avatar: '/danny.webp',
     },
     {
-      name: 'Brooklyn Simmons',
-      role: 'Marketing Coordinator',
+      name: 'Sofia Malik',
+      role: 'University Student',
       quote:
-        'Financial planners help people to knowledge in about how to invest and save their money the most efficient way ever. planners help people to knowledge in about how.',
-      avatar: '/reviewer.png',
+        'I love how easy it was to set up my eSIM with GePanda. The internet worked immediately after signing up, and I didn\'t have to worry about buying local SIMs anymore.',
+      avatar: '/Sofia.webp',
     },
   ];
 
@@ -608,7 +612,7 @@ export default function Home() {
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Image src={item.avatar} alt={item.name} width={56} height={56} className="w-full h-full object-cover" />
+                <Image src={item.avatar || '/reviewer.png'} alt={item.name} width={56} height={56} className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           ))}

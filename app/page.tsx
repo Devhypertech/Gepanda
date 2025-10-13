@@ -223,7 +223,7 @@ export default function Home() {
               href="https://esim.gepanda.com/packages/?nocache"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-3 px-4 text-sm sm:text-base font-semibold text-[#007e68] shadow-md transition-all duration-300 hover:bg-yellow-300 inline-block"
+              className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-3 px-4 text-sm sm:text-base font-semibold text-[#007e68] shadow-md transition-all duration-300 hover:bg-yellow-300 inline-block text-center"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
             >

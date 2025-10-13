@@ -23,7 +23,12 @@ export default function Footer() {
         },
         {
             title: 'Follow Us',
-            items: ['Facebook', 'Twitter (now X)', 'LinkedIn', 'YouTube', 'Instagram', 'Reddit']
+            items: [
+                { name: 'Facebook', url: 'https://www.facebook.com/people/GePanda/61574959115702/' },
+                { name: 'Instagram', url: 'https://www.instagram.com/gepanda.official/' },
+                { name: 'X', url: 'https://x.com/GePanda_eSIM' },
+                { name: 'LinkedIn', url: 'https://www.linkedin.com/company/gepanda' }
+            ]
         }
     ];
 
@@ -93,29 +98,38 @@ export default function Footer() {
                                 {section.title}
                             </motion.h4>
                             <ul className="space-y-3 text-white/60">
-                                {section.items.map((item, itemIndex) => (
-                                    <motion.li 
-                                        key={item}
-                                        variants={itemVariants}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: true, amount: 0.3 }}
-                                        transition={{ delay: (sectionIndex * 0.1) + (itemIndex * 0.05) }}
-                                    >
-                                        <Link href="#">
-                                            <motion.span
-                                                className="block cursor-pointer"
-                                                whileHover={{ 
-                                                    color: "#00ffe1",
-                                                    x: 5
-                                                }}
-                                                transition={{ duration: 0.2 }}
+                                {section.items.map((item, itemIndex) => {
+                                    const itemName = typeof item === 'string' ? item : item.name;
+                                    const itemUrl = typeof item === 'string' ? 'https://esim.gepanda.com/' : item.url;
+                                    
+                                    return (
+                                        <motion.li 
+                                            key={itemName}
+                                            variants={itemVariants}
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ once: true, amount: 0.3 }}
+                                            transition={{ delay: (sectionIndex * 0.1) + (itemIndex * 0.05) }}
+                                        >
+                                            <a 
+                                                href={itemUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
-                                                {item}
-                                            </motion.span>
-                                        </Link>
-                                    </motion.li>
-                                ))}
+                                                <motion.span
+                                                    className="block cursor-pointer"
+                                                    whileHover={{ 
+                                                        color: "#00ffe1",
+                                                        x: 5
+                                                    }}
+                                                    transition={{ duration: 0.2 }}
+                                                >
+                                                    {itemName}
+                                                </motion.span>
+                                            </a>
+                                        </motion.li>
+                                    );
+                                })}
                             </ul>
                         </motion.div>
                     ))}
@@ -136,30 +150,30 @@ export default function Footer() {
                     transition={{ duration: 0.2 }}
                 >
                     © 2025 Gepanda. All rights reserved.&nbsp;
-                    <Link href="#" className="underline mr-2">
+                    <a href="https://esim.gepanda.com/" target="_blank" rel="noopener noreferrer" className="underline mr-2">
                         <motion.span
                             whileHover={{ color: "#00ffe1" }}
                             transition={{ duration: 0.2 }}
                         >
                             Privacy Policy
                         </motion.span>
-                    </Link>
-                    <Link href="#" className="underline mr-2">
+                    </a>
+                    <a href="https://esim.gepanda.com/" target="_blank" rel="noopener noreferrer" className="underline mr-2">
                         <motion.span
                             whileHover={{ color: "#00ffe1" }}
                             transition={{ duration: 0.2 }}
                         >
                             Terms of Service
                         </motion.span>
-                    </Link>
-                    <Link href="#" className="underline">
+                    </a>
+                    <a href="https://esim.gepanda.com/" target="_blank" rel="noopener noreferrer" className="underline">
                         <motion.span
                             whileHover={{ color: "#00ffe1" }}
                             transition={{ duration: 0.2 }}
                         >
                             Cookie Preference
                         </motion.span>
-                    </Link>
+                    </a>
                 </motion.div>
 
                 <motion.div 

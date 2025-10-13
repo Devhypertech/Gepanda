@@ -195,25 +195,38 @@ html {
 
 .card {
   position: sticky;
-  top: 80px;
+  top: 60px;
   margin: 0 auto;
   width: 100%;
-  height: 300px;
+  height: auto;
+  min-height: 280px;
   border-width: 0px;
   background: 000000;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  padding: 1rem;
   /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); */
   will-change: transform;
+}
+
+@media (min-width: 640px) {
+  .card {
+    top: 70px;
+    min-height: 320px;
+    font-size: 1.4rem;
+    padding: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
   .card {
     top: 100px;
     height: 400px;
+    min-height: 400px;
     font-size: 2rem;
+    padding: 2rem;
   }
 }
 
@@ -227,12 +240,20 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #22FDD6, #FDFD74);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1rem;
   height: 100%;
-  border-width: 4px;
+  border-width: 3px;
   border-color: #007E68;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+  .step-box {
+    border-radius: 16px;
+    padding: 1.5rem;
+    border-width: 4px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -247,8 +268,14 @@ html {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%;
+}
+
+@media (min-width: 640px) {
+  .step-content {
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -275,10 +302,16 @@ html {
 }
 
 .step-text h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 900;
   margin: 0.5rem 0;
   line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .step-text h2 {
+    font-size: 1.4rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -288,14 +321,23 @@ html {
 }
 
 .step-text p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .step-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
 }
 
 @media (min-width: 768px) {
   .step-text p {
     font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -307,10 +349,27 @@ html {
 .step-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 1.2rem;
+  border-radius: 0.8rem;
   display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;     /* centers vertically */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 120px;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .step-image img {
+    border-radius: 1rem;
+    max-height: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .step-image img {
+    border-radius: 1.2rem;
+    max-height: 200px;
+  }
 }
 
 
@@ -319,12 +378,20 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #FFB472, #FF7700);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1rem;
   height: 100%;
-  border-width: 4px;
+  border-width: 3px;
   border-color: #FFB472;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+  .step-box2 {
+    border-radius: 16px;
+    padding: 1.5rem;
+    border-width: 4px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -341,12 +408,20 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #E57EFB, #DD16FC);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1rem;
   height: 100%;
-  border-width: 4px;
+  border-width: 3px;
   border-color: #a900c6;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+  .step-box3 {
+    border-radius: 16px;
+    padding: 1.5rem;
+    border-width: 4px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -363,12 +438,20 @@ html {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #EED791, #A5DCD4);
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1rem;
   height: 100%;
-  border-width: 4px;
+  border-width: 3px;
   border-color: #007E68;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 640px) {
+  .step-box4 {
+    border-radius: 16px;
+    padding: 1.5rem;
+    border-width: 4px;
+  }
 }
 
 @media (min-width: 768px) {

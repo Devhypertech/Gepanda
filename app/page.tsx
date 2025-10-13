@@ -33,15 +33,15 @@ const scaleIn = {
 export default function Home() {
 
   const countries = [
-    { name: "Turkey", price: "3.89", flag: "/icons/turkey.png" },
-    { name: "United States", price: "3.99", flag: "/icons/usa.png" },
-    { name: "Thailand", price: "2.99", flag: "/icons/thailand.png" },
-    { name: "Malaysia", price: "3.89", flag: "/icons/mala.png" },
-    { name: "United Arab Emirates", price: "3.99", flag: "/icons/uae.png" },
-    { name: "China", price: "4.48", flag: "/icons/china.png" },
-    { name: "Japan", price: "3.89", flag: "/icons/japan.png" },
-    { name: "France", price: "3.99", flag: "/icons/france.png" },
-    { name: "India", price: "3.99", flag: "/icons/ind.png" },
+    { name: "Turkey", price: "3.89", flag: "/icons/turkey.png", url: "https://esim.gepanda.com/packages/?bundle=turkey" },
+    { name: "United States", price: "3.99", flag: "/icons/usa.png", url: "https://esim.gepanda.com/packages/?bundle=united-states" },
+    { name: "Thailand", price: "2.99", flag: "/icons/thailand.png", url: "https://esim.gepanda.com/packages/?bundle=339" },
+    { name: "Malaysia", price: "3.89", flag: "/icons/mala.png", url: "https://esim.gepanda.com/packages/?bundle=malaysia" },
+    { name: "United Arab Emirates", price: "3.99", flag: "/icons/uae.png", url: "https://esim.gepanda.com/packages/?bundle=united-arab-emirates" },
+    { name: "China", price: "4.48", flag: "/icons/china.png", url: "https://esim.gepanda.com/packages/?bundle=334" },
+    { name: "Japan", price: "3.89", flag: "/icons/japan.png", url: "https://esim.gepanda.com/packages/?bundle=335" },
+    { name: "France", price: "3.99", flag: "/icons/france.png", url: "https://esim.gepanda.com/packages/?bundle=france" },
+    { name: "India", price: "3.99", flag: "/icons/ind.png", url: "https://esim.gepanda.com/packages/?bundle=india" },
   ];
 
   const stats = [
@@ -219,13 +219,16 @@ export default function Home() {
               Country
             </motion.button>
 
-            <motion.button 
-              className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-3 px-4 text-sm sm:text-base font-semibold text-[#007e68] shadow-md transition-all duration-300 hover:bg-yellow-300"
+            <motion.a 
+              href="https://esim.gepanda.com/packages/?nocache"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full whitespace-nowrap rounded-full bg-[#fdfd74] py-3 px-4 text-sm sm:text-base font-semibold text-[#007e68] shadow-md transition-all duration-300 hover:bg-yellow-300 inline-block"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.95 }}
             >
               View All Destinations
-            </motion.button>
+            </motion.a>
 
             <motion.button 
               className="w-full whitespace-nowrap rounded-full bg-green-600 py-3 px-4 text-sm sm:text-base font-semibold shadow-md transition-all duration-300 hover:opacity-90 hover:scale-105"
@@ -243,8 +246,11 @@ export default function Home() {
           variants={staggerContainer}
         >
           {countries.map((country, idx) => (
-            <motion.div
+            <motion.a
               key={idx}
+              href={country.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group bg-[#191919] rounded-lg px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-white transition-all duration-300 hover:scale-105 hover:bg-[#222] cursor-pointer"
               variants={fadeInUp}
               whileHover={{ 
@@ -272,7 +278,7 @@ export default function Home() {
               >
                 &gt;
               </motion.span>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </motion.section>
@@ -487,14 +493,17 @@ export default function Home() {
               >
                 Connect Instantly
               </motion.h2>
-              <motion.button 
-                className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm sm:text-base font-semibold px-5 sm:px-6 py-2 rounded-full shadow-md"
+              <motion.a 
+                href="https://myaccount.gepanda.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white text-sm sm:text-base font-semibold px-5 sm:px-6 py-2 rounded-full shadow-md inline-block"
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(16, 185, 129, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.2 }}
               >
                 Activate your eSim
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>
@@ -537,13 +546,16 @@ export default function Home() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-3 sm:p-4 flex flex-col justify-end">
                   {item.id && <span className="text-xs sm:text-sm text-white/70 mb-2 mt-2 sm:mt-4">{item.id}</span>}
-                  <motion.button 
+                  <motion.a 
+                    href="https://esim.gepanda.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-2 sm:mt-3 text-xs sm:text-sm underline underline-offset-4 text-emerald-400 flex items-center gap-1"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
                     Explore more <span className="text-lg sm:text-xl">→</span>
-                  </motion.button>
+                  </motion.a>
                 </div>
               </motion.div>
             ))}
@@ -672,8 +684,11 @@ export default function Home() {
             >
               Invite your friends to use Gepanda and get a USD 5 credit for every successful referral.
             </motion.p> */}
-            <motion.button 
-              className="bg-[#00ffe1] text-black font-semibold px-6 py-3 sm:py-4 rounded-full hover:bg-[#00e6cb] transition-colors text-sm sm:text-base"
+            <motion.a 
+              href="https://esim.gepanda.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#00ffe1] text-black font-semibold px-6 py-3 sm:py-4 rounded-full hover:bg-[#00e6cb] transition-colors text-sm sm:text-base inline-block"
               whileHover={{ 
                 scale: 1.05, 
                 boxShadow: "0 15px 35px rgba(0, 255, 225, 0.4)"
@@ -682,7 +697,7 @@ export default function Home() {
               transition={{ duration: 0.2 }}
             >
               Learn More
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </motion.section>

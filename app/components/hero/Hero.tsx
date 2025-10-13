@@ -5,7 +5,6 @@ import Sidebar from '../Sidebar';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import useGsapScroll from '@/hooks/useGsapScroll';
-import MobileMenu from '../../components/MobileMenu';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { motion, Variants } from 'framer-motion';
@@ -49,10 +48,6 @@ export default function Hero() {
                     {/* Sidebar for Desktop */}
                     {/* <Sidebar /> */}
 
-                    {/* Mobile Menu Button */}
-                    <div className="absolute top-4 left-4 z-50 block lg:hidden">
-                        <MobileMenu />
-                    </div>
 
                     {/* Hero Content */}
                     <div
@@ -218,9 +213,6 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="absolute top-4 left-4 z-50">
-                    <MobileMenu />
-                </div>
 
                 {/* Logo */}
                 <motion.div

@@ -7,19 +7,42 @@ export default function Footer() {
     const footerSections = [
         {
             title: 'Popular Destinations',
-            items: ['Spain', 'Greece', 'Italy', 'Turkey', 'United Kingdom', 'Portugal', 'France', 'Germany', 'Netherlands', 'Canada']
+            items: [
+                { name: 'United Arab Emirates', url: 'https://esim.gepanda.com/packages/?bundle=united-arab-emirates' },
+                { name: 'United State', url: 'https://esim.gepanda.com/packages/?bundle=united-states' },
+                { name: 'Thailand', url: 'https://esim.gepanda.com/packages/?bundle=339' },
+                { name: 'Malaysia', url: 'https://esim.gepanda.com/packages/?bundle=malaysia' },
+                { name: 'France', url: 'https://esim.gepanda.com/packages/?bundle=france' },
+                { name: 'Turkey', url: 'https://esim.gepanda.com/packages/?bundle=turkey' },
+                { name: 'Japan', url: 'https://esim.gepanda.com/packages/?bundle=335' },
+                { name: 'China', url: 'https://esim.gepanda.com/packages/?bundle=334' },
+                { name: 'India', url: 'https://esim.gepanda.com/packages/?bundle=india' }
+            ]
         },
         {
-            title: 'Gepanda',
-            items: ['Business', 'About Us', 'Careers', 'Refer a Friend', 'Become an Affiliate']
+            title: 'Resources',
+            items: [
+                { name: 'How It Works', url: 'https://esim.gepanda.com/how-it-works/' },
+                { name: 'Press Room', url: 'https://esim.gepanda.com/articles/' },
+                { name: 'Packages', url: 'https://esim.gepanda.com/packages/?nocache' },
+                { name: 'About Us', url: 'https://esim.gepanda.com/about-us-3/' },
+                { name: 'Blogs', url: 'https://esim.gepanda.com/blogs/' },
+                { name: 'FAQs', url: 'https://esim.gepanda.com/faq/' }
+            ]
         },
         {
-            title: 'eSIM',
-            items: ['What is an eSIM', 'Supported Devices', 'Download App', 'Security Features', 'Blog']
+            title: 'Partnership',
+            items: [
+                { name: 'Partner With Us', url: 'https://esim.gepanda.com/partner-with-us/' },
+                { name: 'Become an Affiliate', url: 'https://esim.gepanda.com/affiliate-program/' }
+            ]
         },
         {
-            title: 'Help',
-            items: ['Help Center', 'Getting Started', 'Plans and Payments', 'Troubleshooting', 'FAQ']
+            title: 'Tools',
+            items: [
+                { name: 'Data Calculator', url: 'https://esim.gepanda.com/mobile-data-usage-calculator/' },
+                { name: 'GePanda GPT', url: 'https://chatgpt.com/g/g-67bf1315afb481919246e253f7094e40-gepanda-esim-ai-travel-connectivity' }
+            ]
         },
         {
             title: 'Follow Us',
@@ -99,12 +122,9 @@ export default function Footer() {
                             </motion.h4>
                             <ul className="space-y-3 text-white/60">
                                 {section.items.map((item, itemIndex) => {
-                                    const itemName = typeof item === 'string' ? item : item.name;
-                                    const itemUrl = typeof item === 'string' ? 'https://esim.gepanda.com/' : item.url;
-                                    
                                     return (
                                         <motion.li 
-                                            key={itemName}
+                                            key={item.name}
                                             variants={itemVariants}
                                             initial="hidden"
                                             whileInView="visible"
@@ -112,7 +132,7 @@ export default function Footer() {
                                             transition={{ delay: (sectionIndex * 0.1) + (itemIndex * 0.05) }}
                                         >
                                             <a 
-                                                href={itemUrl}
+                                                href={item.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
@@ -124,7 +144,7 @@ export default function Footer() {
                                                     }}
                                                     transition={{ duration: 0.2 }}
                                                 >
-                                                    {itemName}
+                                                    {item.name}
                                                 </motion.span>
                                             </a>
                                         </motion.li>
@@ -150,7 +170,7 @@ export default function Footer() {
                     transition={{ duration: 0.2 }}
                 >
                     © 2025 Gepanda. All rights reserved.&nbsp;
-                    <a href="https://esim.gepanda.com/" target="_blank" rel="noopener noreferrer" className="underline mr-2">
+                    <a href="https://esim.gepanda.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="underline mr-2">
                         <motion.span
                             whileHover={{ color: "#00ffe1" }}
                             transition={{ duration: 0.2 }}
@@ -158,20 +178,12 @@ export default function Footer() {
                             Privacy Policy
                         </motion.span>
                     </a>
-                    <a href="https://esim.gepanda.com/" target="_blank" rel="noopener noreferrer" className="underline mr-2">
+                    <a href="https://esim.gepanda.com/terms-conditions/" target="_blank" rel="noopener noreferrer" className="underline">
                         <motion.span
                             whileHover={{ color: "#00ffe1" }}
                             transition={{ duration: 0.2 }}
                         >
                             Terms of Service
-                        </motion.span>
-                    </a>
-                    <a href="https://esim.gepanda.com/" target="_blank" rel="noopener noreferrer" className="underline">
-                        <motion.span
-                            whileHover={{ color: "#00ffe1" }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            Cookie Preference
                         </motion.span>
                     </a>
                 </motion.div>

@@ -86,7 +86,45 @@ export default function Hero() {
                             <motion.div
                                 variants={floatingAnimation}
                                 animate="animate"
+                                className="relative"
                             >
+                                {/* Login and Sign Up Buttons - Top Right of Banner */}
+                                <div className="absolute top-4 right-4 z-10 flex items-center gap-2 sm:gap-3">
+                                    <motion.a
+                                        href="https://myaccount.gepanda.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full font-semibold text-xs sm:text-sm md:text-base text-white transition-all duration-300 shadow-lg"
+                                        style={{ backgroundColor: '#00bc7d' }}
+                                        whileHover={{ 
+                                            scale: 1.05,
+                                            boxShadow: "0 10px 25px rgba(0, 188, 125, 0.4)"
+                                        }}
+                                        whileTap={{ scale: 0.95 }}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.3 }}
+                                    >
+                                        Login
+                                    </motion.a>
+                                    <motion.a
+                                        href="https://myaccount.gepanda.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full font-semibold text-xs sm:text-sm md:text-base text-black transition-all duration-300 shadow-lg"
+                                        style={{ backgroundColor: '#fdfd74' }}
+                                        whileHover={{ 
+                                            scale: 1.05,
+                                            boxShadow: "0 10px 25px rgba(253, 253, 116, 0.4)"
+                                        }}
+                                        whileTap={{ scale: 0.95 }}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.4 }}
+                                    >
+                                        Sign Up
+                                    </motion.a>
+                                </div>
                                 <Swiper
                                     modules={[Navigation, Autoplay]}
                                     spaceBetween={0}
@@ -208,18 +246,17 @@ export default function Hero() {
             
             {/* Mobile + Tablet Hero */}
             <motion.section 
-                className="bg-gradient-to-b from-[#02584b] to-black text-white pb-10 px-4 flex flex-col items-center lg:hidden"
+                className="bg-gradient-to-b from-[#02584b] to-black text-white pb-10 flex flex-col items-center lg:hidden"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
-
                 {/* Logo */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="mt-16 sm:mt-20 lg:mt-24"
+                    className="mt-8 sm:mt-12 lg:mt-16"
                 >
                     <Image src="/logo.png" alt="GePanda Logo" width={140} height={50} className="mx-auto" />
                 </motion.div>
@@ -232,6 +269,43 @@ export default function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     whileHover={{ scale: 1.02 }}
                 >
+                    {/* Login and Sign Up Buttons - Top Right of Banner */}
+                    <div className="absolute top-3 right-3 z-10 flex items-center gap-2">
+                        <motion.a
+                            href="https://myaccount.gepanda.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm text-white transition-all duration-300 shadow-lg"
+                            style={{ backgroundColor: '#00bc7d' }}
+                            whileHover={{ 
+                                scale: 1.05,
+                                boxShadow: "0 10px 25px rgba(0, 188, 125, 0.4)"
+                            }}
+                            whileTap={{ scale: 0.95 }}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                        >
+                            Login
+                        </motion.a>
+                        <motion.a
+                            href="https://myaccount.gepanda.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm text-black transition-all duration-300 shadow-lg"
+                            style={{ backgroundColor: '#fdfd74' }}
+                            whileHover={{ 
+                                scale: 1.05,
+                                boxShadow: "0 10px 25px rgba(253, 253, 116, 0.4)"
+                            }}
+                            whileTap={{ scale: 0.95 }}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                        >
+                            Sign Up
+                        </motion.a>
+                    </div>
                     <Image
                         src="/banner1.png"
                         alt="Hero Image"

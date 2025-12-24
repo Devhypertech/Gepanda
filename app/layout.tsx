@@ -16,8 +16,8 @@ const poppins = Poppins({
 
 
 export const metadata = {
-  title: 'My Site',
-  description: 'My description',
+  title: 'Gepanda',
+  description: 'Data when you need it',
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
